@@ -81,16 +81,13 @@ gaze = GazeTracking()
 
 #initializing camera setup
 camera = cv2.VideoCapture('test.webm')
-print("------------video capture strated------------------")
-#camera.release()
-#cv2.destroyAllWindows()
-print("------------video capture off------------------")
+
+
 
 # main function defination for detection of face and outcome   
 # generate frame by frame from camera
 def gen_frames(List):
         camera = cv2.VideoCapture('test.webm')
-        print("------------ingrnframe---------------------")
         global capture,frame_cnt,smile_count,pale_count,worried_count,anxious_count,surprise_count,angry_count,other_count
         frame_cnt = 1
         smile_count = 0
@@ -180,7 +177,6 @@ def gen_frames(List):
                 
             else:
                 popupmsg("The processing of video is finished you can check the results now", "processing")
-                print("---------out of gen frame-----------")
                 switch = 0
                 camera.release()
                 cv2.destroyAllWindows()
@@ -275,6 +271,8 @@ def audio():
     stop_btn.grid(row=1,column=2)
     voice_rec.mainloop()
     #audio function end
+
+
 #speech functions start
 #pauses in speech
 def mysppaus(m,p):
@@ -370,9 +368,7 @@ def speechtotext():
         listing=matches[grammermist]
         #print(matches[grammermist])
         grammermist+=1
-    #print("testing0")
-    #print(corrected_text[2])
-    #print("after match testing 1")
+    
     
     #code suggested
     p="trial" # Audio File title
@@ -442,10 +438,9 @@ def eyecal(List):
 #function to view video feed on screen
 @app.route('/video_feed')
 def video_feed():
-        print("------------in video feed------------------")
         return Response(gen_frames(List), mimetype='multipart/x-mixed-replace; boundary=frame')
     
-        
+#audio        
 @app.route('/requests',methods=['POST','GET'])
 def tasks():
     global switch,camera,ready
@@ -453,26 +448,20 @@ def tasks():
     if request.method == 'POST':
         
         if request.form.get('recordings') == 'record/stop':
-            print("------4---")
             if(ready==1):
                 ready=0
-                print("------5---")
                 audio()
             else:
-                print("--------6-------")
                 speechtotext()
                 ready=1
 
      
     elif request.method=='GET':
-        print("----7-----")
         return render_template('index.html')   
     if(execution == 1):
-        print("-----8-----")
         return render_template('index.html')
     else :
         #returning values to home page to use in script for printing   
-        print("---9-----")  
         return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement,input = text , gram = grammermist , pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech)
 
 #request routing from form in index.html
@@ -496,13 +485,13 @@ def tasks():
             #cv2.destroyAllWindows()
             #speechtotext()
             #switch=1
-                
-     
     
     #else :
         #print("--------rendering page---------")
         #returning values to home page to use in script for printing     
         #return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement ,  data9 = text , data10 = grammermist , data12 = pauses , data13 = articulates)
+
+
 #video routing
 @app.route('/requests',methods=['POST','GET'])
 def tasks1():
@@ -510,7 +499,6 @@ def tasks1():
     
     if request.method == 'POST':
         if  request.form.get('stop') == 'Finish': 
-            print("--------rendering page---------")
             #returning values to home page to use in script for printing     
             return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement ,  data9 = text , data10 = grammermist , data12 = pauses , data13 = articulates)
 
