@@ -66,7 +66,7 @@
   });
 
   $(document).ready(function () {
-      $(document).on("scroll", onScroll);
+      //$(document).on("scroll", onScroll);
       
       //smoothscroll
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
