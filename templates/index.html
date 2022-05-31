@@ -28,6 +28,25 @@
       background: red;
       box-shadow: 0px 0px 1px #777;
     }
+
+    .con {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+
+    }
+
+    /* Actual card with shadow */
+    .card1 {
+      height: 2cm;
+      width: 13cm;
+      border-radius: 5px;
+      box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+      
+    }
   </style>
 
   <meta charset="UTF-8">
@@ -117,9 +136,14 @@ https://templatemo.com/tm-568-digimedia
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <h6>Public Speaking Practice</h6>
-                    <h2>We Boost Your Confidence</h2>
-
+                    <h6 style="font-family: Times New Roman, Times, serif;">FOR AMBITIOUS LEADERS AND
+                      PROFESSIONALS WHO WANT TO:</h6>
+                  <h2 style="font-family: Chalkduster, fantasy;">Improve Communication, Sound more
+                      confident and become a powerful public speaker</h2>
+                  <h6 style="font-family: Times New Roman, Times, serif;">with AI-powered solution for
+                      practicing your presentations and getting instant feedback on areas of
+                      improvement.
+                  </h6>
                   </div>
 
                 </div>
@@ -127,7 +151,7 @@ https://templatemo.com/tm-568-digimedia
             </div>
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="{{url_for('static',filename='assets/images/slider-dec-v3.png')}}" alt="">
+                <img src="{{url_for('static',filename='assets/images/monami.jpeg')}}" alt="">
               </div>
             </div>
           </div>
@@ -136,31 +160,29 @@ https://templatemo.com/tm-568-digimedia
     </div>
   </div>
 
-  
+
   <div id="about" class="contact-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h6>Start Learning</h6>
-            <h4>Start practice With Us <em>Now</em></h4>
-            <div class="line-dec"></div>
             
+            <h4>Please wait while we are preparing your report - instant feedback and areas of improvement</h4>
+            <div class="line-dec"></div>
+
             <br>
             <div class="video">
-              <h5 style="font-family: 'Oswald';">We are Processing your request. It might take a bit longer.</h5><br>
-              <img src="{{ url_for('video_feed') }}" height="80%"><br>
               
+              <img src="{{ url_for('video_feed') }}" height="80%"><br>
+
               <div class="line-dec"></div>
-            </div>  
-            
-            <br>
-            <h6>Click here once the video stops to get your report !!</h6>
+            </div>
+            <h6 style="color: red;">Click here once the video stops to get your report !!</h6>
             <form method="post" action="{{ url_for('tasks1') }}">
-              <input type="submit" value="Finish" name="stop" id="submit"/> 
+              <input type="submit" value="Finish" name="stop" id="submit" />
             </form>
-              <br>
-            
+            <br>
+
 
           </div>
         </div>

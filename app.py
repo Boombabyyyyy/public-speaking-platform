@@ -1,4 +1,6 @@
 #importing required files
+mysp=__import__("my-voice-analysis")
+from tkinter import messagebox
 from flask import *  
 from flask_cors import CORS, cross_origin
 from distutils.log import debug
@@ -11,13 +13,13 @@ import json
 #speech recognization import start
 import speech_recognition as sr
 import sounddevice as sd
-import tkinter as tk
-from tkinter import Button, Tk, messagebox
-from tkinter import ttk
-
+#import tkinter as tk
+#from tkinter import Button, Tk, messagebox
+#from tkinter import ttk
 import queue
 import soundfile as sf
 import threading
+from tkinter import *
 
 from flask import Flask, render_template, Response, request
 from gingerit.gingerit import GingerIt
@@ -25,7 +27,7 @@ import language_tool_python
 from gingerit.gingerit import GingerIt
 import parselmouth
 from parselmouth.praat import call, run_file
-mysp=__import__("my-voice-analysis")
+
 #speech import ends
 
 #instatiate flask app
@@ -76,13 +78,8 @@ rate_of_speech = 0
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 gaze = GazeTracking()
  
-
-
-
 #initializing camera setup
 camera = cv2.VideoCapture('test.webm')
-
-
 
 # main function defination for detection of face and outcome   
 # generate frame by frame from camera
@@ -176,7 +173,7 @@ def gen_frames(List):
 
                 
             else:
-                popupmsg("The processing of video is finished you can check the results now", "processing")
+                #popupmsg("The processing of video is finished you can check the results now", "processing")
                 switch = 0
                 camera.release()
                 cv2.destroyAllWindows()
@@ -188,14 +185,7 @@ def gen_frames(List):
             eyecal(List)
 
 
-def popupmsg(msg, title):
-    root = tk.Tk()
-    root.title(title)
-    label = ttk.Label(root, text=msg)
-    label.pack(side="top", fill="x", pady=10)
-    B1 = tk.Button(root, text="Okay", command = root.destroy)
-    B1.pack()
-    root.mainloop()
+
 
 def audio():
     
@@ -372,12 +362,11 @@ def speechtotext():
     
     #code suggested
     p="trial" # Audio File title
-    c=r"C:/Users/Vaishnavi/Desktop/voice-recorder-python" 
+    c=r"D:\monami_project" 
     pauses = mysppaus(p,c)
     articulates = myspatc(p,c)
     duration = myspod(p,c)
     rate_of_speech = myspsr(p,c)
-    
     return grammermist,pauses,articulates,duration,rate_of_speech
 
     
@@ -443,6 +432,8 @@ def video_feed():
 #audio        
 @app.route('/requests',methods=['POST','GET'])
 def tasks():
+    
+        
     global switch,camera,ready
     
     if request.method == 'POST':

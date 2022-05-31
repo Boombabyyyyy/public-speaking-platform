@@ -42,6 +42,61 @@
             background: red;
             box-shadow: 0px 0px 1px #777;
         }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0%;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        /* Actual card with shadow */
+        .card1 {
+            height: 8cm;
+            width: 18cm;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+
+        .card2 {
+            height: 30cm;
+            width: 22cm;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card3 {
+            height: 18cm;
+            width: 18cm;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card4 {
+            height: 7cm;
+            width: 18cm;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
     </style>
 
     <meta charset="UTF-8">
@@ -111,21 +166,67 @@
 
     <!-- ***** important Area start ***** -->
 
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s"
+                                data-wow-delay="1s">
+                                <div class="row">
+                                    <div class="col-lg-12">
+
+                                        
+                                        <h6 style="font-family: Times New Roman, Times, serif;">FOR AMBITIOUS LEADERS AND
+                                            PROFESSIONALS WHO WANT TO:</h6>
+                                        <h2 style="font-family: Chalkduster, fantasy;">Improve Communication, Sound more
+                                            confident and become a powerful public speaker</h2>
+                                        <h6 style="font-family: Times New Roman, Times, serif;">with AI-powered solution for
+                                            practicing your presentations and getting instant feedback on areas of
+                                            improvement.
+                                        </h6>
+                                        <a href={{ url_for('uploading') }}><button id="next">Start Practicing Now!
+
+                                            </button></a><br><br>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <img src="{{url_for('static',filename='assets/images/monami.jpeg')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="about" class="contact-us section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <h6>Start Learning</h6>
-                        <h4>Start practice With Us <em>Now</em></h4>
+                        <h3><b>REPORT</b></h3><br>
                         <div class="line-dec"></div>
                         <br>
-                        <a href={{ url_for('uploading') }}><button id="next">START</button></a><br><br>
+                        <div class="cont">
+                            <div class="card1">
+                        <h3><b>This is what you spoke</b></h3><br>
+                        <script>
+                            var text = '{{ input }}';
+                            document.write(text);
+                        </script>
+</div>
+</div>
+<br>
 
 
-                        <h3><b>SUMMARY</b></h3><br>
-                        <h4><b>Facial analysis </b></h4>
-                        <h5 style="color: dodgerblue;"><b>Know your strength and weakness</b></h5>
+                        <h4>Facial Analysis Summary</h4>
+                        <h5 style="color: dodgerblue;"><b>Know your strengths and weakness</b></h5>
                         <script>
 
                             var frame = '{{ data }}';
@@ -142,58 +243,80 @@
                             var otherthresh = '{{ var1 }}';
                             document.write("<b>SMILING FACE OUTCOME:<br></b>")
                             if (smile > smilethresh) {
-                                document.write("weakness : smiling contineous<br>");
-                                document.write("<br>Suggestion          : Having a little smile is always good while you speak but too much of smiling can affect the performance.Why not try using some normal expression in between which can be helpful in gaining attention of public. Otherwise you did very well!<br>");
+                                document.write("WEAKNESS → Permanent smile on face through presentation.<br>");
+                                document.write("<br>SUGGESTION → Smiling is a very important part of presentation but try avoiding smiling constantly.<br>Sometimes you tend to make up for your awkwardness with smiles.<br>Don’t feel too conscious and just relax.<br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the audience. But an enduring smile can come off as unnatural and give you out as awkward.<br>");
                             }
                             else {
-                                
-                                document.write("strength : you are good with smiling<br>");
+
+                                document.write("STRENGTH → : Appropriate amount of smiling. Well done!<br>");
                             }
                             document.write("<b>PALE FACE OUTCOME:<br></b>")
                             if (pale > smilethresh) {
-                                document.write("weakness : You had very less expression. <br>");
-                                document.write("<br>Suggestion          : Why not have some more expression to get the attention of audience and make this a little more intresting .Being more facially expressive will tend to make more impact on your audience.Keep on practicing<br>");
+                                document.write("WEAKNESS → You had very little expression while speaking.<br>");
+                                document.write("<br>SUGGESTION → Try to relax and give some natural expressions on your face. <br>Keep recording yourself and keep improving based on the feedback . <br>And you’ll see the improvement yourself.<br><b>Pro Tip: </b>Facial expressions combined with verbal delivery helps to engage and connect with the audience.<br>Verbal and non-verbal communication should be matched to avoid confusion in audience");
+                                document.write("<br>You can watch this quick video on the importance of facial expression in speech delivery and how you can prepare your facial muscles for it:<br>")
+                                var obj = {
+                                    "video": {
+                                        "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/q1Ty1kSpiVc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                    }
+                                }
+                                document.write(obj.video.value);
                             }
                             else {
-                                document.write("strength : you are good at expression <br>");
+                                document.write("STRENGTH → : Very nice presentation! Your facial expressions on point.<br>");
                             }
-                            
-                            document.write("<b>ANGRY FACE OUTCOME:<br></b>")
+
+                            document.write("<br><b>ANGRY FACE OUTCOME:<br></b>")
                             if (angry > angrythresh) {
-                                document.write("weakness : You looked angry multiple times.<br>");
-                                document.write("<br> Suggestion          : Take deep breathing ! Making an angry face while speking may lead to loosing audience attention. Try concentrating on good things while you speak in front of audience.<br>");
+                                document.write("WEAKNESS → You looked too serious throughout your presentation.<br>");
+                                document.write("<br> SUGGESTION → Avoid frowning when you are speaking to the audience. <br>Frowning can be misconstrued as disinterest in the audience.<br>");
+                                document.write("<br><b>Pro Tip: </b>Frowning can also come from a natural reaction to confusion or even deeply concentrating on something. <br>You may not even notice sometimes when you’re frowning. <br>Recording yourself and trying to check the frown based on the feedback and observing yourself can be helpful.<br>")
                             }
                             else {
-                                document.write("strength : you are good with your expression <br>");
+                                document.write("STRENGTH → : Your expressions are relaxed and confident. Good job!<br>");
                             }
                             document.write("<b>OTHER FACE EXPRESSIN OUTCOME:<br></b>")
                             if (other > otherthresh) {
-                                document.write("weakness : You make some unusual harsh face. <br>");
-                                document.write("<br> Suggestion          : Making such face is not good while speaking in front of audience. May lead to some hurtful meaning .Try using some gentle expression !Better Practice more. <br>");
+                                document.write("WEAKNESS → Your expressions seem a bit awkward and twitchy.<br>");
+                                document.write("<br> SUGGESTION → You can practice before this AI powered tool and see when your expressions are coming out awkward.<br>");
+                                document.write("<br><b>Pro Tip: </b> Looking at a fixed focus, the camera here and an audience out there, will also help reduce your dependency on looking into the notes which will prepare you for presenting before the live audience without having to constantly look at the notes. <br>Reaching to the presentation spot early and acquainting yourself with the atmosphere and the audience beforehand is also helpful for a stress-free presentation.<br>")
                             }
                             else {
-                                document.write("strength : you are good with your expression <br>");
+                                document.write("STRENGTH → : Your expressions are relaxed and confident. Good job!<br>");
+
                             }
                             document.write("<b>OVERALL FACE EXPRESSION OUTCOME:<br></b>")
                             if (anxious > wasthresh || surprise > wasthresh || worried > wasthresh) {
                                 if (anxious > wasthresh) {
-                                    document.write("Weakness : You looked feared most of the time . <br>");
-                                    document.write("<br> Suggestion          : Do not fear ! To become more confident Practice, and then practice some more.While you’re speaking, make eye contact. <br>");
+                                    document.write("WEAKNESS → You looked feared most of the time . <br>");
+                                    document.write("<br> SUGGESTION → Do not fear ! To become more confident Practice, and then practice some more.While you’re speaking, make eye contact. <br>");
                                 }
                                 else if (surprise > wasthresh) {
-                                    document.write("Weakness  : You looked surprised too many times.<br>");
-                                    document.write("<br> Suggestion          :Surprise is the briefest of all the emotions, lasting a few seconds at most. But you made surprised face too many times it made you looked unprepared to face the audience. <br>");
+                                    document.write("WEAKNESS → You looked surprised too many times during your presentation.<br>");
+                                    document.write("<br> SUGGESTION →Avoid looking surprised during your speech (unless it’s a part of your presentation) or the audience will get confused about the message in it. <br>There shouldn’t be incompatibility between your speech and your expressions. <br>You should be confident of the message you are delivering through your speech.<br>");
+                                    document.write("<br><b>Pro Tip: </b>Prepare yourself before your presentation.<br>Know by heart the message you want to convey through your presentation.<br>Well-familiarise yourself with the presentation materials by sufficient practice on this AI friend<br>Before starting the presentation check all the needful items of the presentation, such as, content cards, Powerpoint decks and anything else that’s supporting your presentation.<br>Don’t make any last minute addition to the materials if you are not confident about it.<br>")
                                 }
                                 else if (worried > wasthresh) {
-                                    document.write("Weakness  : You looked nervous. <br>");
-                                    document.write("<br> Suggestion : Don't be nervous ! Do some deep breathing to get relaxed . Focus on your material, not on your audience. Don't fear a moment of silence also you can have a little bit of smile on face to look more presentable and confident . You can do it!! <br>");
+                                    document.write("WEAKNESS → You looked nervous during your presentation.<br>");
+                                    document.write("<br> Suggestion : Take deep breaths and try practising meditation to calm your nerves before a presentation. <br>Don’t be scared or embarrassed of making mistakes. <br>Don’t get stressed.<br>");
+                                    document.write("<br><b>Pro Tip: </b>Try to channel your nervousness into enthusiasm. <br>The audience will not know that you are nervous.<br>Nervousness can be taken for enthusiasm by the audience. <br>Take advantage of it.<br>")
+                                    document.write("<br>Here’s a quick video to show how to overcome nervousness before your presentation.<br>")
+                                    var obj = {
+                                    "video": {
+                                        "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/VEStYVONy-0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                    }
+                                }
+                                document.write(obj.video.value);
+
                                 }
                             }
                             else {
-                                document.write("Expression Outcome :  Your expressions were on point ! Keep it up !!You are now ready for interacting with your audience. All the best. <br>");
+                                document.write("Expression Outcome :  Great job with the easy and confident expression!<br>");
+                                
                             }
 
                         </script>
+
                         <br><br>
                         <h6><em>Eye Contact </em></h6>
                         <script>
@@ -205,15 +328,16 @@
                                 if (blink == frame / 22) {
                                     i = i * 2;
                                     document.write("<b>EYE BLINKING :<br></b>")
-                                    document.write("You had a very good eye contact with the audience!!You did not blink your eyes too many times or too less times.It was just on point .You looked confident.<br>");
+                                    document.write("Blinking looked natural. You looked confident and collected. Right on!<br>");
                                     break;
                                 }
 
                                 if (blink < frame / 22) {
                                     i = i * 2;
                                     document.write("<b>EYE BLINKING :<br></b>")
-                                    document.write("Weakness  : Too less eye blinks scared and nervous.<br>");
-                                    document.write("<br> Suggestion        : You seemed to be staring at the audience and nervous , try keeping yourself calm and composed while you speak.<br>");
+                                    document.write("WEAKNESS → You were hardly blinking.<br>");
+                                    document.write("<br>SUGGESTION → You can keep practising your speech before this AI powered tool and monitor your blinking till it’s natural.<br>Don’t be nervous! Take a deep breath and go! <br>");
+                                    document.write("<br><b>Pro Tip:</b> Less than usual or excessive blinking often comes from nervousness and awkwardness. <br>Confidence in your speech content and presentation environment will automatically regularize your blinking. <br>")
                                     break;
 
                                 }
@@ -221,8 +345,8 @@
                                 else {
                                     i = i * 2;
                                     document.write("<b>EYE BLINKING :<br></b>")
-                                    document.write("Weakness  : Too many eye blink ,found to be nervous and shy to face audience.<br> ");
-                                    document.write("<br> Suggestion        : You did not make a good eye contact with the audience , try keeping your eyes onto your audience to connect better.<br>");
+                                    document.write("WEAKNESS → Excessive blinking during speech.<br> ");
+                                    document.write("<br>SUGGESTION → If you keep practising your speech before this AI powered friend a few times and become more equipped with the content and delivery, your blinking will normalize by itself.<br>");
                                     break;
                                 }
                             }
@@ -230,7 +354,9 @@
 
 
                         </script>
+                       
                         <br>
+                        
                         <script>
                             var counting = 12;
                             var frame = '{{ data }}';
@@ -238,15 +364,22 @@
                             if (frame > 88) {
                                 if (movement > frame / counting) {
                                     document.write("<b>EYE MOVEMENT :<br></b>")
-                                    document.write("Weakness  : You looked around too many time.<br>");
-                                    document.write("<br> Suggestion        : If you dont have an audience at your left or right do not look that side. You seemed to be looking at different directions multiple times.<br><br>");
+                                    document.write("WEAKNESS → Disconnecting eye contact throughout presentation.<br>");
+                                    document.write("<br>SUGGESTION → Avoid breaking eye contact with the audience while presenting. <br>When in front of a live audience, try to look at them while speaking. <br>You can practice to keep looking at yourself while recording with this AI powered tool<br>If you are camera shy, it’ll go away after some time of practicing.<br><br>");
+                                    document.write("This video will help you learn the importance of eye contact and how to do it:<br>")
+                                    var obj = {
+                                        "video": {
+                                            "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/bHblBfPy5qU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                        }
+                                    }
+                                    document.write(obj.video.value);
                                     counting = counting * i;
 
                                 }
 
                                 else {
                                     document.write("<b>EYE MOVEMENT :<br></b>")
-                                    document.write("Good going!! You kept your focus on the audience.<br>");
+                                    document.write("You maintained proper eye contact through the speech. Good going!<br>");
 
                                 }
 
@@ -254,29 +387,29 @@
                             }
 
                             else {
-                                document.write("<br>Warning : The video is too short to detect (less than a minute) ! Try recording for longer duration .<br>");
+                                document.write("<br>Warning : The video is too short to analyze. Please record at least a one-minute long video.<br>");
                             }
+
+
+
                         </script>
-                        <br>
-                        <h4><b>Voice Analysis</b></h4>
-                        <h5><b>This is what you spoke</b></h5><br>
-                        <script>
-                            var text = '{{ input }}';
-                            document.write(text);
-                        </script>
-                        <h6>grammer</h6><br>
+                         
+                                                <h4>Voice Analysis Summary</h4>
+
+                        <h6>Grammer</h6><br>
                         <script>
 
                             var text1 = '{{ gram }}';
 
                             if (text1 > 5) {
-                                document.write("weakness : poor at grammar and formation of sentences <br><br>")
+                                document.write("WEAKNESS → Grammar needs improvement.Check out the grammatical mistakes you have made in the  <b>This is what you spoke</b> segment.<br><br>")
+                                document.write("Feedback → Reading English books and watching English content can help in building up an idea of grammar.<br>")
                             }
                             else {
-                                document.write("strength : good at grammar, no mistakes found <br><br>")
+                                document.write("STRENGTH → : Good at grammar, no mistakes found <br><br>")
                             }
                             if (text1 = 0) {
-                                document.write("<br> lets start recording <br>")
+                                document.write("<br> let's start recording <br>")
                             }
                         </script>
                         <h6>No. of pauses</h6><br>
@@ -286,17 +419,26 @@
 
 
                             if (pauses == duration) {
-                                document.write("no of pauses and filler words used : ",pauses,"<br>")
-                                
-                                document.write("<br> weakness : you took too many pauses while speaking<br><br>")
+                                document.write("No of pauses and filler words used : ", pauses, "<br>")
+
+                                document.write("<br> WEAKNESS → You took too many pauses while speaking<br><br>")
+                                document.write("SUGGESTION → It's okay to take pauses. Be comfortable with it. But don’t overuse it.<br>Avoid using filler words like : <b>um, uh, like</b> and you will find your audience totally engaged in your speech.")
+                                document.write("<br><b>Pro Tip:</b> Learn to pause like a pro. <br>Don’t pause for more than 2 seconds<br>Use your pauses when moving from one idea to another<br>Use your pauses for dramatic effect")
+                                document.write("<br>Watch this video to get an idea of utilizing your pauses for effect in your speech<br>")
+                                var obj = {
+                                    "video": {
+                                        "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/kXsd25D25HI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                    }
+                                }
+                                document.write(obj.video.value);
                             }
 
                             else {
-                                document.write("no of pauses and filler words used : ",pauses,"<br>")
-                                document.write("<br> strength : you were good with pauses while you spoke <br><br>")
+                                document.write("No of pauses and filler words used : ", pauses, "<br>")
+                                document.write("<br>SUGGESTION → Your timing and frequency of pauses are compatible with your speech duration. Good job!<br><br>")
                             }
-                            if (pauses = 0) {
-                                document.write("<br> lets start recording<br>")
+                            if (pauses == 0) {
+                                document.write("<br> Let's start recording<br>")
                             }
 
 
@@ -308,19 +450,29 @@
 
                             //document.write(rate_of_speech)
                             if (rate_of_speech == 2 || rate_of_speech == 3) {
-                                document.write("you spoke :" ,rate_of_speech ," words per second <br>")
-                                document.write("<br>strength : rate of speech is perfect <br><br>")
+                                document.write("You spoke :", rate_of_speech, " words per second <br>")
+                                document.write("<br>STRENGTH → : Rate of speech is perfect <br><br>")
                             }
                             else if (rate_of_speech < 2) {
-                                document.write("you spoke :" ,rate_of_speech ," words per second <br>")
-                                document.write("<br>weakness : you spoke too slowly the good rate of speech is 140 words per minute<br><br>")
+                                document.write("You spoke :", rate_of_speech, " words per second <br>")
+                                document.write("<br>WEAKNESS → (NO OF RATE OF SPEECH IN PER SEC) <br>Your rate of speech is below 2-3 words per second, the standard public speaking speech-rate.<br><br>")
+                                document.write("<br>SUGGESTION → A few words can be taken out OR added to this number, but don’t go below 130 and above 150.<br>A slow rate of speech can make the audience lose interest in your speech.<br>Practice your speech before this AI tool over and over and try to improve the rate of speech with each recording.")
+                                document.write("<br><b>Pro Tip: </b>You can watch videos of your favorite speakerS and try to follow their speed of speech for practice.<br>")
                             }
                             else if (rate_of_speech > 3) {
-                                document.write("you spoke :" ,rate_of_speech ," words per second <br>")
-                                document.write("<br>weakness : you spoke too fast to be understood the good rate of speech is 140 words per minute<br><br>")
+                                document.write("You spoke :", rate_of_speech, " words per second <br>")
+                                document.write("<br>WEAKNESS → Your rate of speech is too fast for the audience to understand.<br>")
+                                document.write("SUGGESTION→ Your rate of speech determines how clearly your message is understood by the audience or if they think you are rambling. Try to stay between 130 to 150 words per minute. <br>Nervousness can also be a reason for a fast rate of speech. Try to relax.<br>Keep practicing with this AI friend and try slowing down your speech following the feedback.")
+                                document.write("<br>Here’s a video on why fast speech can be detrimental to Public Speaking and how you can do it:<br>")
+                                var obj = {
+                                    "video": {
+                                        "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/QxpR2_gwUEY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                    }
+                                }
+                                document.write(obj.video.value);
                             }
-                            if (rate_of_speech = 0) {
-                                document.write("<br>lets start recording <br>")
+                            if (rate_of_speech == 0) {
+                                document.write("<br>let's start recording <br>")
                             }
                         </script>
 
@@ -329,17 +481,36 @@
                             var articulation_rate = '{{ arti }}';
 
                             if (articulation_rate >= 4 && articulation_rate <= 5) {
-                                document.write("strength : good at pronounciation of word <br>")
+                                document.write("STRENGTH → : Good at pronunciation<br>")
                             }
                             else {
-                                document.write("<br> weakness : you need to work on prononciation <br>")
+                                document.write("<br> WEAKNESS → Your pronunciation needs some work.<br>")
+                                document.write("SUGGESTION → You can watch English content and observe how they pronounce words to work on your pronunciation.<br>Use Google pronunciation tool to learn correct pronunciation of words")
+                                document.write("<br><b>Pro Tip:</b> A really useful way is to read English content and at the same time listen to the same content using tools with the “read aloud article” feature. Try it. It’s pretty awesome!")
+
                             }
                             if (articulation_rate = 0) {
-                                document.write("<br> lets start recording <br>")
+                                document.write("<br> Let's start recording <br>")
                             }
                         </script>
-
-
+                        
+                        <br><br>
+                        <div class="cont">
+                            <div class="card4">
+                                                
+                        <h5><b><u> LAST BUT THE LEAST </u></b></h5><br>
+                        <b>A Pro Tip for improve speech practice: </b>
+                        <p style="color: black;">Pick 1-5 words from your daily newspaper and try
+                            making up a speech from that. Record with this AI friend and keep improving by watching
+                            yourself and the feedback.<br>
+                        </p>
+                        <p style="color: black;">
+                            Perfection comes with practicing, recording the scopes for improvement and then improving on
+                            them with more practice. You’ll be a great public speaker if you are motivated to make it
+                            happen and follow the routine. All The Best!!<br>
+                        </p>
+</div>
+</div>
                         <br><br>
                         <div class="line-dec"></div>
                     </div>
@@ -348,10 +519,6 @@
 
 
                 <!-- ***** important End ***** -->
-
-
-
-
 
 
                 <div id="services" class="services section">
@@ -476,7 +643,7 @@
                                                                                 that “the pause” is not something to
                                                                                 avoid. A
                                                                                 well-timed break in speaking can even be
-                                                                                used to help strengthen a point, letting
+                                                                                used to help STRENGTH →en a point, letting
                                                                                 it sit with
                                                                                 the audience before moving on to
                                                                                 the next topic. Become more comfortable
