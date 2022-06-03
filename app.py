@@ -438,7 +438,7 @@ def tasks():
     
     if request.method == 'POST':
         
-        if request.form.get('recordings') == 'record/stop':
+        if request.form.get('recordings') == 'Record Audio':
             if(ready==1):
                 ready=0
                 audio()
@@ -455,33 +455,6 @@ def tasks():
         #returning values to home page to use in script for printing   
         return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement,input = text , gram = grammermist , pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech)
 
-#request routing from form in index.html
-
-
-        #video
-        #if  request.form.get('stop') == 'Finish': 
-            #print("--------rendering page---------")
-            #returning values to home page to use in script for printing     
-            #return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement ,  data9 = text , data10 = grammermist , data12 = pauses , data13 = articulates)
-
-            #if(switch==1):
-                #switch=0
-                #print("----------inswitch 1------------")
-                #camera = cv2.VideoCapture('test.webm')
-                
-
-           
-            #camera.release()
-            #print("------in else part-------")
-            #cv2.destroyAllWindows()
-            #speechtotext()
-            #switch=1
-    
-    #else :
-        #print("--------rendering page---------")
-        #returning values to home page to use in script for printing     
-        #return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement ,  data9 = text , data10 = grammermist , data12 = pauses , data13 = articulates)
-
 
 #video routing
 @app.route('/requests',methods=['POST','GET'])
@@ -489,7 +462,7 @@ def tasks1():
     global switch,camera,ready
     
     if request.method == 'POST':
-        if  request.form.get('stop') == 'Finish': 
+        if  request.form.get('stop') == 'Get Report': 
             #returning values to home page to use in script for printing     
             return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement ,  data9 = text , data10 = grammermist , data12 = pauses , data13 = articulates)
 
