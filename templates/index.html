@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    .video {
+      width: 600px;
+      height: 600px;
+    }
+
+    #submit {
+      background-color: #ccc;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 6px;
+      color: #fff;
+      font-family: 'Oswald';
+      font-size: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+
+
+
+    #submit:hover {
+      border: none;
+      background: red;
+      box-shadow: 0px 0px 1px #777;
+    }
+
+    .con {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+
+    }
+
+    /* Actual card with shadow */
+    .card1 {
+      height: 2cm;
+      width: 13cm;
+      border-radius: 5px;
+      box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+      
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>public speaking practice</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static',filename='/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/fontawesome.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/templatemo-digimedia-v3.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/animated.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/owl.css')}}">
+  <!--
+
+TemplateMo 568 DigiMedia
+
+https://templatemo.com/tm-568-digimedia
+
+-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#about">Main</a></li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+
+
+
+
+  <!-- ***** important Area start ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h5 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #00bfff"><b>For ambitious Leaders and
+                      Professionals who want to :</b></h5>
+                  <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Improve Communication, Sound more
+                      confident and become a powerful public speaker</h1><br>
+                  <h5 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #00bfff"><b>With AI-powered solution for practicing your presentations and getting instant feedback on areas of improvement.</b>
+                  </h5><br>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{{url_for('static',filename='assets/images/monamidp.png')}}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="about" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+            
+            <h4>Please wait while we are preparing your report - instant feedback and areas of improvement</h4>
+            <div class="line-dec"></div>
+
+            <br>
+            <div class="video">
+              
+              <img src="{{ url_for('video_feed') }}" height="80%"><br>
+
+              <div class="line-dec"></div>
+            </div>
+            <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #00bfff">Click here once the video stops to get your report !!</h3><br>
+            <form method="post" action="{{ url_for('tasks1') }}">
+              <input type="submit" value="Get Report" name="stop" id="submit" style="background-color: rgb(13, 13, 248);" class="btn btn-primary"/>
+            </form>
+            <br>
+
+
+          </div>
+        </div>
+
+        <!-- ***** important End ***** -->
+
+
+
+        <div id="#" class="about section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+                      <img src="{{url_for('static',filename='assets/images/img_speak.jpg')}}" alt="">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="about-right-content">
+                      <div class="section-heading">
+                        <h6>PUBLIC SPEAKING SKILLS</h6>
+                        <h4>What is Public speaking <em>skills</em></h4>
+                        <div class="line-dec"></div>
+                      </div>
+                      <p>Public speaking is a soft skill that requires excellent communication skills, enthusiasm, and
+                        the
+                        ability to engage with an audience.
+                        Soft skills are interpersonal skills that are less technical and more about how you interact
+                        with
+                        others.</p>
+                      <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                          <div class="skill-item first-skill-item wow fadeIn" data-wow-duration="1s"
+                            data-wow-delay="0s">
+                            <div class="progress" data-percentage="100">
+                              <span class="progress-left">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <span class="progress-right">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <div class="progress-value">
+                                <div>
+                                  100%<br>
+                                  <span>Confidence</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                          <div class="skill-item second-skill-item wow fadeIn" data-wow-duration="1s"
+                            data-wow-delay="0s">
+                            <div class="progress" data-percentage="80">
+                              <span class="progress-left">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <span class="progress-right">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <div class="progress-value">
+                                <div>
+                                  80%<br>
+                                  <span>practice</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                          <div class="skill-item third-skill-item wow fadeIn" data-wow-duration="1s"
+                            data-wow-delay="0s">
+                            <div class="progress" data-percentage="0">
+                              <span class="progress-left">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <span class="progress-right">
+                                <span class="progress-bar"></span>
+                              </span>
+                              <div class="progress-value">
+                                <div>
+                                  0%<br>
+                                  <span>Fear</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+        <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/js/owl-carousel.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/js/animation.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/js/imagesloaded.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+
+</body>
+
+</html>
