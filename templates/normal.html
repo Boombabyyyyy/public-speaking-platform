@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #next {
+            background-color: rgb(35, 94, 212);
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Oswald';
+            font-size: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        #next:hover {
+            border: none;
+            background: rgb(2, 115, 180);
+            box-shadow: 0px 0px 1px #777;
+        }
+
+        
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0%;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        /* Actual card with shadow */
+        .card1 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+
+        .card2 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card3 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card4 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <title>public speaking practice</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/templatemo-digimedia-v3.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/ollie.css')}}">
+
+</head>
+
+<body>
+
+
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#about" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#services">Know more</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ***** important Area start ***** -->
+
+
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="padding-left: 2cm; padding: right 2cm;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-6 align-self-center">
+                  <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <h5 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #00bfff"><b>For ambitious Leaders and
+                          Professionals who want to :</b></h5>
+                      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Improve Communication, Sound more
+                          confident and become a powerful public speaker</h1><br>
+                      <h5 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #00bfff"><b>With AI-powered solution for practicing your presentations and getting instant feedback on areas of improvement.</b>
+                      </h5><br>
+                      <a href={{ url_for('uploading') }}><button id="next" class="btn btn-success">Start Practicing Now!
+
+                    </button></a><br><br>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <img src="{{url_for('static',filename='assets/images/monamiedited1.png')}}" alt="" style="height: 15cm; width: 15cm;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    
+     <!-- ***** this is what you spoke ***** -->
+
+    <section class="section" id="blog" style=" background-color: #9ccaf3;">
+
+        <div class="container mb-3">
+            <h3 class="section-title mb-5">REPORT</h3>
+           
+            <div class="blog-wrapper">
+                <div class="img-wrapper">
+                    <div class="cont">
+                        <div class="card1" style="background-color: rgb(244, 244, 252); padding-left: 1cm; padding-right: 1cm;padding-top: 10px;padding-bottom: 10px;">
+                            <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #040607"><b>This is what you spoke</b></h3><br>
+                            <div>
+                                
+                        
+                                {% if transcript != "" %}
+                                    <div id="speechTranscriptContainer">
+                                        <p id="speechText">{{ transcript }}</p>
+                                    </div>
+                                {% endif %}
+                            <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+ <!-- ***** facial expression  ***** -->
+
+ <section class="section" id="blog">
+
+    <div class="container mb-3">
+        <h6 class="xs-font mb-0">Know your strengths and weakness</h6>
+        <h3 class="section-title mb-5">Facial Expression Analysis Summary</h3>
+        
+        <div class="blog-wrapper" >
+            <div class="img-wrapper">
+                <h5 class="blog-title">
+                    <span>&#10003;</span>&nbsp;Smile</h5>
+                <script>
+                    var smile = '{{ data1 }}';
+                    var smilethresh = '{{ var1 }}';
+                    if(smile == 0){
+                        document.write("<b>WEAKNESS → <b>You did not smile.<br>")
+                        document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation.<br>")
+                    }
+                    else if (smile > smilethresh) {
+                                document.write("<b>WEAKNESS → <b>Permanent smile on face through presentation.<br>");
+                                document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation but try avoiding smiling constantly.<br>Sometimes you tend to make up for your awkwardness with smiles.<br>Don’t feel too conscious and just relax.<br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the audience. But an enduring smile can come off as unnatural and give you out as awkward.<br>");
+                            }
+                    else {
+                                document.write(smile)
+                                document.write(smilethresh)
+                                document.write("<b>STRENGTH → </b> Appropriate amount of smiling. Well done!<br>");
+                            }
+                </script>
+        <!-- ***** PALE FACE OUTCOME  ***** -->
+            <br>        
+            <h5 class="blog-title">
+                        <span>&#10003;</span>&nbsp;Pale </h5>
+            
+            <script>
+                var pale = '{{ data2 }}';
+                var smilethresh = '{{ var1 }}';
+                if (pale > smilethresh) {
+                                document.write("<b>WEAKNESS → </b>You had very little expression while speaking.<br>");
+                                document.write("<br><b>FEEDBACK → </b>Try to relax and give some natural expressions on your face. <br>Keep recording yourself and keep improving based on the feedback . <br>And you’ll see the improvement yourself.<br><b>Pro Tip: </b>Facial expressions combined with verbal delivery helps to engage and connect with the audience.<br>Verbal and non-verbal communication should be matched to avoid confusion in audience");
+                                document.write("<br>You can watch this quick video on the importance of facial expression in speech delivery and how you can prepare your facial muscles for it:<br>")
+                                var obj = {
+                                    "video": {
+                                        "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/q1Ty1kSpiVc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                    }
+                                }
+                                document.write(obj.video.value);
+                                document.write("<br>")
+                            }
+                else {
+                    document.write("<b>STRENGTH → </b> Very nice presentation! Your facial expressions on point.<br>");
+                }
+
+            </script>
+        
+        <!-- ***** ANGRY FACE OUTCOME  ***** -->
+        <br>        
+            <h5 class="blog-title">
+                        <span>&#10003;</span>&nbsp;Nervous</h5>
+            
+            <script>
+                var angry = '{{ data6 }}';
+                var angrythresh = '{{ var1 }}';
+                if (angry > angrythresh) {
+                                document.write("<b>WEAKNESS → </b>You looked too serious throughout your presentation.<br>");
+                                document.write("<br><b>FEEDBACK → </b>Avoid frowning when you are speaking to the audience. <br>Frowning can be misconstrued as disinterest in the audience.<br>");
+                                document.write("<br><b>Pro Tip: </b>Frowning can also come from a natural reaction to confusion or even deeply concentrating on something. <br>You may not even notice sometimes when you’re frowning. <br>Recording yourself and trying to check the frown based on the feedback and observing yourself can be helpful.<br>")
+                            }
+                else {
+                    document.write("<b>STRENGTH → </b> Your expressions are relaxed and confident. Good job!<br>");
+                }
+
+            </script>
+        
+        <!-- ***** OTHER FACE EXPRESSIN OUTCOME ***** -->
+       
+        <!-- ***** overall FACE OUTCOME  ***** -->
+        <br>        
+            <h5 class="blog-title">
+                        <span>&#10003;</span>&nbsp;Other Expression</h5>
+            
+        <script>
+            var worried = '{{ data3 }}';
+            var anxious = '{{ data4 }}';
+            var surprise = '{{ data5 }}';
+            var wasthresh = '{{ var1 }}';
+            var other = '{{ data8 }}';
+               
+            var otherthresh = '{{ var1 }}';
+
+
+            if (other > otherthresh) {
+                document.write("<b>WEAKNESS → </b>Your expressions seem a bit awkward and twitchy.<br>");
+                document.write("<br> <b>FEEDBACK → </b>You can practice before this AI powered tool and see when your expressions are coming out awkward.<br>");
+                document.write("<br><b>Pro Tip: </b> Looking at a fixed focus, the camera here and an audience out there, will also help reduce your dependency on looking into the notes which will prepare you for presenting before the live audience without having to constantly look at the notes. <br>Reaching to the presentation spot early and acquainting yourself with the atmosphere and the audience beforehand is also helpful for a stress-free presentation.<br>")
+            }
+            else {
+                document.write("<b>STRENGTH → </b> Your expressions are relaxed and confident. Good job!<br>");
+
+            }
+            if (anxious > wasthresh || surprise > wasthresh || worried > wasthresh) 
+            {
+                    if (anxious > wasthresh) {
+                        document.write("WEAKNESS → You looked feared most of the time . <br>");
+                        document.write("<br> FEEDBACK → Do not fear ! To become more confident Practice, and then practice some more.While you’re speaking, make eye contact. <br>");
+                    }
+                    else if (surprise > wasthresh) {
+                        document.write("<b>WEAKNESS → </b>You looked surprised too many times during your presentation.<br>");
+                        document.write("<br> <b>FEEDBACK →</b> Avoid looking surprised during your speech (unless it’s a part of your presentation) or the audience will get confused about the message in it. <br>There shouldn’t be incompatibility between your speech and your expressions. <br>You should be confident of the message you are delivering through your speech.<br>");
+                        document.write("<br><b>Pro Tip: </b>Prepare yourself before your presentation.<br>Know by heart the message you want to convey through your presentation.<br>Well-familiarise yourself with the presentation materials by sufficient practice on this AI friend<br>Before starting the presentation check all the needful items of the presentation, such as, content cards, Powerpoint decks and anything else that’s supporting your presentation.<br>Don’t make any last minute addition to the materials if you are not confident about it.<br>")
+                    }
+                    else if (worried > wasthresh) {
+                        document.write("<b>WEAKNESS → </b>You looked nervous during your presentation.<br>");
+                        document.write("<br><b> Suggestion : </b>Take deep breaths and try practising meditation to calm your nerves before a presentation. <br>Don’t be scared or embarrassed of making mistakes. <br>Don’t get stressed.<br>");
+                        document.write("<br><b>Pro Tip: </b>Try to channel your nervousness into enthusiasm. <br>The audience will not know that you are nervous.<br>Nervousness can be taken for enthusiasm by the audience. <br>Take advantage of it.<br>")
+                        document.write("<br>Here’s a quick video to show how to overcome nervousness before your presentation.<br>")
+                        var obj = {
+                        "video": {
+                            "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/VEStYVONy-0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                        }
+                    }
+                    document.write(obj.video.value);
+                    document.write("<br>")
+
+                    }
+                }
+            else {
+                document.write("<b>STRENGTH → </b>  Great job with the easy and confident expression!<br>");
+                
+            }
+        </script>
+
+
+
+        <br>        
+        <h5 class="blog-title">
+                    <span>&#10003;</span>&nbsp;Blinking</h5>
+                    <script>
+                        var frame = '{{ data }}';
+                        var i = 88;
+                        var blink = '{{ data7 }}';
+
+                        while (i < frame) {
+                            if (blink == frame / 22) {
+                                i = i * 2;
+                                document.write("<b>STRENGTH → </b>Blinking looked natural. You looked confident and collected. Right on!<br>");
+                                break;
+                            }
+
+                            if (blink < frame / 22) {
+                                i = i * 2;
+                                
+                                document.write("<b>WEAKNESS → </b>You were hardly blinking.<br>");
+                                document.write("<br><b>FEEDBACK → </b>You can keep practising your speech before this AI powered tool and monitor your blinking till it’s natural.<br>Don’t be nervous! Take a deep breath and go! <br>");
+                                document.write("<br><b>Pro Tip:</b> Less than usual or excessive blinking often comes from nervousness and awkwardness. <br>Confidence in your speech content and presentation environment will automatically regularize your blinking. <br>")
+                                break;
+
+                            }
+
+                            else {
+                                i = i * 2;
+                               
+                                document.write("<b>WEAKNESS → </b>Excessive blinking during speech.<br> ");
+                                document.write("<br><b>FEEDBACK → </b>If you keep practising your speech before this AI powered friend a few times and become more equipped with the content and delivery, your blinking will normalize by itself.<br>");
+                                break;
+                            }
+                        }
+                    </script>
+                   
+
+                   <br>        
+                   <h5 class="blog-title">
+                               <span>&#10003;</span>&nbsp;Eye Contact</h5>
+                               <script>
+                                var counting = 12;
+                                var frame = '{{ data }}';
+                                var movement = '{{ eye }}';
+                                if (frame > 88) {
+                                    if (movement > frame / counting) {
+                                        
+                                        document.write("<b>WEAKNESS → </b>Disconnecting eye contact throughout presentation.<br>");
+                                        document.write("<br><b>FEEDBACK → </b> Avoid breaking eye contact with the audience while presenting. <br>When in front of a live audience, try to look at them while speaking. <br>You can practice to keep looking at yourself while recording with this AI powered tool<br>If you are camera shy, it’ll go away after some time of practicing.<br><br>");
+                                        document.write("This video will help you learn the importance of eye contact and how to do it:<br>")
+                                        var obj = {
+                                            "video": {
+                                                "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/bHblBfPy5qU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                            }
+                                        }
+                                        document.write(obj.video.value);
+                                        document.write("<br>")
+                                        counting = counting * i;
+    
+                                    }
+    
+                                    else {
+                                       
+                                        document.write("<b>STRENGTH → </b>You maintained proper eye contact through the speech. Good going!<br>");
+    
+                                    }
+    
+    
+                                }
+    
+                                else {
+                                    document.write("<br><b>Warning : </b>The video is too short to analyze. Please record at least a one-minute long video.<br>");
+                                }
+    
+    
+    
+                            </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="blog" style=" background-color: #9ccaf3;">
+
+    <div class="container mb-3">
+        <h6 class="xs-font mb-0">Know your strengths and weakness</h6>
+        <h3 class="section-title mb-5">Voice Analysis Summary</h3>
+        
+        <div class="blog-wrapper">
+            <div class="img-wrapper">
+                <h5 class="blog-title">
+                    <span>&#10003;</span>&nbsp;Grammar</h5>
+                    <script>
+
+                        var text1 = '{{ gram }}';
+
+                        if (text1 > 5) {
+                            document.write("<b>WEAKNESS → </b>Grammar needs improvement.Check out the grammatical mistakes you have made in the  <b>This is what you spoke</b> segment.<br><br>")
+                            document.write("<b>FEEDBACK → </b>Reading English books and watching English content can help in building up an idea of grammar.<br>")
+                        }
+                        else {
+                            document.write("<b>STRENGTH → </b> Good at grammar, no mistakes found <br><br>")
+                        }
+                        if (text1 = 0) {
+                            document.write("<br> let's start recording <br>")
+                        }
+                    </script>
+
+
+                <br>
+                <h5 class="blog-title">
+                    <span>&#10003;</span>&nbsp;Number Of Pauses</h5>
+                    <script>
+                        var pauses = '{{ pau }}';
+                        var duration = '{{ dur }}'
+
+
+                        if (pauses == duration) {
+                            document.write("<b>Number of pauses and filler words used : ", pauses, "<br></b>")
+
+                            document.write("<br> <b>WEAKNESS → </b>You took too many pauses while speaking<br><br>")
+                            document.write("<b>FEEDBACK → </b>It's okay to take pauses. Be comfortable with it. But don’t overuse it.<br>Avoid using filler words like : <b>um, uh, like</b> and you will find your audience totally engaged in your speech.")
+                            document.write("<br><b>Pro Tip:</b> Learn to pause like a pro. <br>Don’t pause for more than 2 seconds<br>Use your pauses when moving from one idea to another<br>Use your pauses for dramatic effect")
+                            document.write("<br>Watch this video to get an idea of utilizing your pauses for effect in your speech<br>")
+                            var obj = {
+                                "video": {
+                                    "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/kXsd25D25HI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                                }
+                            }
+                            document.write(obj.video.value);
+                            document.write("<br>")
+                        }
+
+                        else {
+                            document.write("<b>No of pauses and filler words used : ", pauses, "<br></b>")
+                            document.write("<br><b>FEEDBACK → </b>Your timing and frequency of pauses are compatible with your speech duration. Good job!<br><br>")
+                        }
+                        if (pauses == 0) {
+                            document.write("<br> Let's start recording<br>")
+                        }
+
+
+                    </script>
+<br>
+<h5 class="blog-title">
+    <span>&#10003;</span>&nbsp;Rate Of Speech</h5>
+    <script>
+
+        var rate_of_speech = '{{ ros }}'
+
+        //document.write(rate_of_speech)
+        if (rate_of_speech == 2 || rate_of_speech == 3) {
+            rate_of_speech = rate_of_speech*60;
+            document.write("<b>You spoke : ", rate_of_speech, " words per minute </b><br>")
+            document.write("<br><b>STRENGTH → </b> Rate of speech is perfect <br><br>")
+        }
+        else if (rate_of_speech < 2) {
+            rate_of_speech = rate_of_speech*60;
+            document.write("<b>You spoke :", rate_of_speech, " words per minute <br></b>")
+            document.write("<br><b>WEAKNESS → </b>(NO OF RATE OF SPEECH IN PER SEC) <br>Your rate of speech is below 2-3 words per second, the standard public speaking speech-rate.<br><br>")
+            document.write("<br><b>FEEDBACK → </b>A few words can be taken out OR added to this number, but don’t go below 130 and above 150.<br>A slow rate of speech can make the audience lose interest in your speech.<br>Practice your speech before this AI tool over and over and try to improve the rate of speech with each recording.")
+            document.write("<br><b>Pro Tip: </b>You can watch videos of your favorite speakerS and try to follow their speed of speech for practice.<br>")
+        }
+        else if (rate_of_speech > 3) {
+            rate_of_speech = rate_of_speech*60;
+            document.write("<b>You spoke :", rate_of_speech, " words per minute <br></b>")
+            document.write("<br><b>WEAKNESS → </b>Your rate of speech is too fast for the audience to understand.<br>")
+            document.write("<b>SUGGESTION→ </b>Your rate of speech determines how clearly your message is understood by the audience or if they think you are rambling. Try to stay between 130 to 150 words per minute. <br>Nervousness can also be a reason for a fast rate of speech. Try to relax.<br>Keep practicing with this AI friend and try slowing down your speech following the feedback.")
+            document.write("<br>Here’s a video on why fast speech can be detrimental to Public Speaking and how you can do it:<br>")
+            var obj = {
+                "video": {
+                    "value": "<iframe width='560' height='315' src='https://www.youtube.com/embed/QxpR2_gwUEY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+                }
+            }
+            document.write(obj.video.value);
+            document.write("<br>")
+        }
+        if (rate_of_speech == 0) {
+            document.write("<br>Let's start recording <br>")
+        }
+    </script>
+
+<br>
+<h5 class="blog-title">
+    <span>&#10003;</span>&nbsp;Pronunciation</h5>
+    <script>
+        var articulation_rate = '{{ arti }}';
+
+        if (articulation_rate >= 4 && articulation_rate <= 5) {
+            document.write("<b>STRENGTH → </b> Good at pronunciation<br>")
+        }
+        else {
+            document.write("<br><b>WEAKNESS → </b>Your pronunciation needs some work.<br>")
+            document.write("<b>FEEDBACK → </b>You can watch English content and observe how they pronounce words to work on your pronunciation.<br>Use Google pronunciation tool to learn correct pronunciation of words")
+            document.write("<br><b>Pro Tip:</b> A really useful way is to read English content and at the same time listen to the same content using tools with the “read aloud article” feature. Try it. It’s pretty awesome!")
+
+        }
+        if (articulation_rate = 0) {
+            document.write("<br> Let's start recording <br>")
+        }
+    </script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<center>
+<section class="section" id="blog">
+
+    <div class="container mb-3">
+        <h3 class="section-title mb-5" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #040607">Bonus Tip for improving speech practice:</h3>
+              
+                <div class="cont">
+                   
+                    <div class="card1" style="background-color: rgb(244, 244, 252);">
+               
+                        <div class="line-dec"></div>
+                        <h6>Pick 1-5 words from your daily newspaper and try
+                            making up a speech from that. Record with this AI friend and keep improving by watching
+                            yourself and the feedback.<br></h6>
+                              <h6> Perfection comes with practicing, recording the scopes for improvement and then improving on
+                                    them with more practice. You’ll be a great public speaker if you are motivated to make it
+                                    happen and follow the routine. All The Best!!</h6>
+                                    <br><br>
+
+                        <div class="line-dec"></div>
+                    
+                    
+            </div>
+        </div>
+    </div>
+</section>
+</center>
+
+
+
+
+
+
+
+                <!-- ***** important End ***** -->
+
+
+                <div id="services" class="services section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading  wow fadeInDown" data-wow-duration="1s"
+                                    data-wow-delay="0.5s">
+
+                                    <h4>What Our Team <em>Provides</em></h4>
+                                    <div class="line-dec"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="naccs">
+                                    <div class="grid">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="menu">
+                                                    <div class="first-thumb active">
+                                                        <div class="thumb">
+                                                            <span class="icon"><img
+                                                                    src="{{url_for('static',filename='assets/images/service-icon-01.png')}}"
+                                                                    alt=""></span>
+                                                            Suggestions
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="thumb">
+                                                            <span class="icon"><img
+                                                                    src="{{url_for('static',filename='assets/images/service-icon-02.png')}}"
+                                                                    alt=""></span>
+                                                            Improvement
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="thumb">
+                                                            <span class="icon"><img
+                                                                    src="{{url_for('static',filename='assets/images/service-icon-03.png')}}"
+                                                                    alt=""></span>
+                                                            Platform
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="thumb">
+                                                            <span class="icon"><img
+                                                                    src="{{url_for('static',filename='assets/images/service-icon-04.png')}}"
+                                                                    alt=""></span>
+                                                            Practice
+                                                        </div>
+                                                    </div>
+                                                    <div class="last-thumb">
+                                                        <div class="thumb">
+                                                            <span class="icon"><img
+                                                                    src="{{url_for('static',filename='assets/images/service-icon-01.png')}}"
+                                                                    alt=""></span>
+                                                            Much more
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-lg-12">
+                                                <ul class="nacc">
+                                                    <li class="active">
+                                                        <div>
+                                                            <div class="thumb">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="left-text">
+                                                                            <h4>Suggestions</h4>
+                                                                            <p>If public speaking makes you anxious,
+                                                                                there can be a
+                                                                                tendency to write your speech
+                                                                                out word for word so you can look
+                                                                                at it if you forget your next statement.
+                                                                                However, if
+                                                                                you’ve ever watched a speaker
+                                                                                read from their notes the entire time
+                                                                                they are on
+                                                                                stage, you know that this isn’t
+                                                                                effective. You will lose your audience.
+                                                                                Instead,
+                                                                                keep your notes to a minimum, using
+                                                                                only one- or two-word prompts for each
+                                                                                point you
+                                                                                want to make.
+                                                                                This will help you keep your place
+                                                                                without
+                                                                                detracting from your audience.</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="right-image">
+                                                                            <img src="{{url_for('static',filename='assets/images/services-image.jpg')}}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <div class="thumb">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="left-text">
+                                                                            <h4>Improvement</h4>
+                                                                            <p>One of the biggest distractions as an
+                                                                                audience member
+                                                                                is a speaker who constantly
+                                                                                says “uh” or “um.” These fillers are
+                                                                                typically used
+                                                                                as a way to say something,
+                                                                                anything, while you’re thinking of your
+                                                                                next point.
+                                                                                But some of the best speakers know
+                                                                                that “the pause” is not something to
+                                                                                avoid. A
+                                                                                well-timed break in speaking can even be
+                                                                                used to help STRENGTH →en a point, letting
+                                                                                it sit with
+                                                                                the audience before moving on to
+                                                                                the next topic. Become more comfortable
+                                                                                with this
+                                                                                pause and you will become a better
+                                                                                public speaker.</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="right-image">
+                                                                            <img src="{{url_for('static',filename='assets/images/services-image-02.jpg')}}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <div class="thumb">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="left-text">
+                                                                            <h4>Platform</h4>
+                                                                            <p>This final public speaking tip is
+                                                                                intended to help
+                                                                                you recognize how you may come
+                                                                                across to an audience. When you record
+                                                                                yourself
+                                                                                speaking and watch it back, you may
+                                                                                notice that you do things that you
+                                                                                didn’t even
+                                                                                realize. This provides the opportunity
+                                                                                to correct these issues before being in
+                                                                                front of a
+                                                                                live audience. Another option is to
+                                                                                practice your speech in front of a
+                                                                                friend or family
+                                                                                member and ask for their honest
+                                                                                feedback.</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="right-image">
+                                                                            <img src="{{url_for('static',filename='assets/images/services-image-03.jpg')}}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <div class="thumb">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="left-text">
+                                                                            <h4>Practice</h4>
+                                                                            <p>Mark Twain once said, “It usually takes
+                                                                                me more than
+                                                                                three weeks to prepare a good
+                                                                                impromptu speech.” So, maybe your fear
+                                                                                of public
+                                                                                speaking comes from not being fully
+                                                                                prepared. One way to overcome this,
+                                                                                then, is to
+                                                                                practice, practice, and practice some
+                                                                                more. Each time you deliver your speech,
+                                                                                you will
+                                                                                become more comfortable. You’ll
+                                                                                begin to learn it inside and out,
+                                                                                increasing your
+                                                                                confidence when delivering it for
+                                                                                real.</p>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="right-image">
+                                                                            <img src="{{url_for('static',filename='assets/images/services-image-04.jpg')}}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div>
+                                                            <div class="thumb">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="left-text">
+                                                                            <h4>Much More</h4>
+                                                                            <p>Public speakers make presentations to a
+                                                                                group.
+                                                                                Presentations could range from
+                                                                                speaking to a small number of employees
+                                                                                to
+                                                                                presenting to a large audience at a
+                                                                                national conference or event.
+                                                                                The same skill set and ability to be
+                                                                                comfortable
+                                                                                speaking in public are required
+                                                                                regardless of the size of the group.</p>
+                                                                            <div class="ticks-list"><span><i
+                                                                                        class="fa fa-check"></i> Look
+                                                                                    presentable</span>
+                                                                                <span><i class="fa fa-check"></i> eye
+                                                                                    contact</span>
+                                                                                <span><i class="fa fa-check"></i>
+                                                                                    smile</span>
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 align-self-center">
+                                                                        <div class="right-image">
+                                                                            <img src="{{url_for('static',filename='assets/images/services-image.jpg')}}"
+                                                                                alt="">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Scripts -->
+                <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
+                <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+                <script src="{{url_for('static',filename='assets/js/owl-carousel.js')}}"></script>
+                <script src="{{url_for('static',filename='assets/js/animation.js')}}"></script>
+                <script src="{{url_for('static',filename='assets/js/imagesloaded.js')}}"></script>
+                <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
+
+</body>
+
+</html>
