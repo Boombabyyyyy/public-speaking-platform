@@ -1,7 +1,7 @@
 from __future__ import division
 import os
 import cv2
-import dlib
+import dlib #Installation errors
 from .eye import Eye
 from .calibration import Calibration
 

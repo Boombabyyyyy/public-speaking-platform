@@ -1,5 +1,5 @@
 #importing required files
-mysp=__import__("my-voice-analysis")
+mysp=__import__("my-voice-analysis") #???
 from tkinter import messagebox
 from flask import *  
 from flask_cors import CORS, cross_origin
@@ -23,7 +23,7 @@ from gingerit.gingerit import GingerIt
 import language_tool_python
 from gingerit.gingerit import GingerIt
 import parselmouth
-from parselmouth.praat import call, run_file
+from parselmouth.praat import call, run_file #???
 
 #speech import ends
 
