@@ -1,3 +1,4 @@
+setuptools==58
 absl-py==1.0.0
 altair==4.2.0
 altgraph==0.17.2
