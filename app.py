@@ -191,7 +191,7 @@ def gen_frames(List):
 #pauses in speech
 def mysppaus(m,p):
     sound=p+"/"+m+".wav"
-    sourcerun=p+"/myspsolution.praat"
+    sourcerun=p+"/myspsolution.praat" #????
     path=p+"/"
     try:
         objects= run_file(sourcerun, -20, 2, 0.3, "yes",sound,path, 80, 400, 0.01, capture_output=True)
