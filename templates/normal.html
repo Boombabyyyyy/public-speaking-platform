@@ -1,140 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <style>
-        #next {
-            background-color: rgb(35, 94, 212);
-            -moz-border-radius: 5px;
-            -webkit-border-radius: 5px;
-            border-radius: 6px;
-            color: #fff;
-            font-family: 'Oswald';
-            font-size: 20px;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
+{% block head %}
+<style>
+/* Actual card with shadow */
+    .card1 {
+    height: fit-content;
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+    align-self: center;
+    }
 
-        }
+</style>
 
-        #next:hover {
-            border: none;
-            background: rgb(2, 115, 180);
-            box-shadow: 0px 0px 1px #777;
-        }
+<title>public speaking practice</title>
+{% endblock %}
 
-        
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            height: 0%;
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .con {
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-
-        }
-
-        /* Actual card with shadow */
-        .card1 {
-            height: fit-content;
-            width: fit-content;
-            border-radius: 5px;
-            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
-            align-self: center;
-        }
-
-        .card2 {
-            height: fit-content;
-            width: fit-content;
-            border-radius: 5px;
-            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
-            align-self: center;
-        }
-        .card3 {
-            height: fit-content;
-            width: fit-content;
-            border-radius: 5px;
-            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
-            align-self: center;
-        }
-        .card4 {
-            height: fit-content;
-            width: fit-content;
-            border-radius: 5px;
-            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
-            align-self: center;
-        }
-        
-    </style>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <title>public speaking practice</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{url_for('static',filename='/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/templatemo-digimedia-v3.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/animated.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/owl.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/ollie.css')}}">
-
-</head>
-
-<body>
-
-
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
-
-
+{% block body %}
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-
+                        <!-- ***** Logo Start ***** -->
+                            <a href="/" class="logo">
+                                <img
+                                src="{{url_for('static',filename='assets/images/logo.png')}}"
+                                alt="">
+                            </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
+
                             <li class="scroll-to-section"><a href="#about" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#services">Know more</a></li>
+                            <li class="scroll-to-section"><a href="#services">Services</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -145,10 +45,7 @@
             </div>
         </div>
     </header>
-
     <!-- ***** important Area start ***** -->
-
-
     <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s" style="padding-left: 2cm; padding: right 2cm;">
         <div class="container">
           <div class="row">
@@ -184,11 +81,6 @@
       </div>
 
 
-
-
-
-
-    
      <!-- ***** this is what you spoke ***** -->
 
     <section class="section" id="blog" style=" background-color: #9ccaf3;">
@@ -873,6 +765,6 @@
                 <script src="{{url_for('static',filename='assets/js/imagesloaded.js')}}"></script>
                 <script src="{{url_for('static',filename='assets/js/custom.js')}}"></script>
 
-</body>
+{% endblock %}
 
 </html>

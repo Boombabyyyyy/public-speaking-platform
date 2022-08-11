@@ -346,11 +346,13 @@ header
 }
 
 .header-area .main-nav .logo {
+  align-items: center;
   float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  
 }
 
 .header-area .main-nav .logo {

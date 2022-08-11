@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        #next {
+            background-color: rgb(35, 94, 212);
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Oswald';
+            font-size: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        #next:hover {
+            border: none;
+            background: rgb(2, 115, 180);
+            box-shadow: 0px 0px 1px #777;
+        }
+
+        
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0%;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .con {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+        }
+/* other cards with shadow, card1 is different for each file. */
+        .card2 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card3 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .card4 {
+            height: fit-content;
+            width: fit-content;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+            align-self: center;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: rgb(249, 239, 239);
+            text-align: center;
+            background-color: rgb(3, 24, 252);
+        }
+
+        .parent {
+            width: fit-content;
+            margin: 1px;
+            padding: 2px 2px;
+            text-align: center;
+        }
+
+        .child {
+            display: inline-block;
+
+            padding: 1rem 1rem;
+            vertical-align: middle;
+        }
+
+        .con {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            justify-content: left;
+
+        }
+
+        .float-container {
+            
+            padding: 20px;
+        }
+
+        .float-child {
+            width: 50%;
+            float: left;
+            padding: 20px;
+          
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/templatemo-digimedia-v3.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/owl.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='/assets/css/ollie.css')}}">
+    
+
+
+    {% block head %}{% endblock %}
+</head>
+
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    {% block body %}{% endblock %}
+</body>
+
+
+</html>
