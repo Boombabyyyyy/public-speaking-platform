@@ -193,7 +193,7 @@ soupsieve==2.3.1
 SpeechRecognition==3.8.1
 stopit==1.1.1
 streamlit==1.7.0
-suds-bis 1.0.0 #suds-jurko==0.6
+suds-bis==1.0.0 #suds-jurko==0.6
 tenacity==8.0.1
 tensorboard==2.7.0
 tensorboard-data-server==0.6.1
