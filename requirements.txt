@@ -166,8 +166,9 @@ pytz==2021.3
 pytz-deprecation-shim==0.1.0.post0
 pyusb==1.2.1
 pypiwin32==223
-#pywin32-ctypes==0.2.0 #only compatible with 3.6
-#pywinpty==2.0.7 
+cargo==0.3
+pywin32-ctypes==0.2.0 #only compatible with 3.6
+pywinpty==2.0.7 #same metadata generation error pyproject.toml
 PyYAML==6.0
 pyzmq==22.3.0
 qtconsole==5.2.2
@@ -192,7 +193,7 @@ soupsieve==2.3.1
 SpeechRecognition==3.8.1
 stopit==1.1.1
 streamlit==1.7.0
-suds-jurko==0.6
+suds-bis 1.0.0 #suds-jurko==0.6
 tenacity==8.0.1
 tensorboard==2.7.0
 tensorboard-data-server==0.6.1
