@@ -9,7 +9,7 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 astor==0.8.1
 astunparse==1.6.3
-atd==0.1.5
+atd==0.1.5 #wheel build failed
 attrs==21.2.0
 auto-py-to-exe==2.15.0
 autopep8==1.6.0
