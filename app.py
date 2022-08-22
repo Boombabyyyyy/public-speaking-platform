@@ -333,7 +333,15 @@ def uploading():
 
 @app.route('/normal')
 def index():
-    return render_template('index.html')    
+    return render_template('index.html')
+
+@app.route('/home')
+def home():
+    return render_template('normal.html')  
+
+@app.route('/upload_old')
+def upload_old():
+    return render_template('upload_old.html')
 
 #function for calculation of face expression
 def cal(frame_cnt):
