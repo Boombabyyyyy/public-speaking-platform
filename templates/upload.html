@@ -479,7 +479,7 @@ function createDownloadLink(blob) {
                                         const videoUrl = URL.createObjectURL(blob);
                                         var data = new FormData()
                                         data.append('file', blob, 'test.webm');
-                                        let uploadUrl = 'http://127.0.0.1:5000/upload'; //update this
+                                        let uploadUrl = 'http://216.48.181.54:5000/upload'; //update this
                                         fetch(uploadUrl, {
                                             method: 'POST',
                                             body: data
