@@ -270,7 +270,7 @@ def speechtotext():
 
     with file_audio as source:
         audio_text = r.record(source)
-    text = r.recognize_google(audio_text)
+    text = r.recognize_google(audio_text, language='en-IN')
     #corrected_text = GingerIt().parse(text)
 
      #grammer checking
