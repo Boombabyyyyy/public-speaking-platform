@@ -304,7 +304,7 @@ def upload():
 
 
 @app.route('/upload', methods = ['POST']) 
-@cross_origin(origin='http://127.0.0.1:5500',headers=['Content- Type'])
+@cross_origin(origin='http://127.0.0.1:5500',headers=['Content- Type']) #update this link and find out what this does.
 def uplload():  
     if request.method == 'POST':  
         f = request.files['file']
