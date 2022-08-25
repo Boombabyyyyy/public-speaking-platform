@@ -128,7 +128,6 @@
                 <script>
                     var smile = '{{ data1 }}';
                     var smilethresh = '{{ var1 }}';
-                    console.log(smile, smilethresh);
                     if(smile == 0){
                         document.write("<b>WEAKNESS → <b>You did not smile.<br>");
                         document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation.<br>");
@@ -137,9 +136,13 @@
                                 document.write("<b>WEAKNESS → <b>Permanent smile on face through presentation.<br>");
                                 document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation but try avoiding smiling constantly.<br>Sometimes you tend to make up for your awkwardness with smiles.<br>Don’t feel too conscious and just relax.<br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the audience. But an enduring smile can come off as unnatural and give you out as awkward.<br>");
                             }
-                    else {
+                    else if (sm > 10) {
                                 document.write(smile)
+                                document.write("<br>")
                                 document.write(smilethresh)
+                                document.write("<br>")
+                                document.write("You smiled" + sm + " percent of the speech!<br>");
+                                document.write("<br>")
                                 document.write("<b>STRENGTH → </b> Appropriate amount of smiling. Well done!<br>");
                             }
                 </script>

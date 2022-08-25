@@ -35,7 +35,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 #declaration of variables
 global capture, switch,execution ,frame_cnt,smile_count,pale_count,worried_count,anxious_count,surprise_count,angry_count,blink_cnt,other_count
-global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,a,b
+global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,a,b, percent_smile
 #speech variable initialized
 global recording,file_exists,exe,var,text,listing,grammermist,pauses,articulates,duration,rate_of_speech,ready
 capture=0
@@ -43,6 +43,7 @@ switch=1
 execution = 0
 frame_cnt = 1
 smile_count = 0
+percent_smile = 0
 pale_count = 0
 worried_count = 0
 anxious_count = 0
@@ -134,8 +135,7 @@ def gen_frames(List):
                 other_count = other_count+1
             elif final_emotion == emotions[6]:
                 angry_count = angry_count+1
-            print( "Data: ")
-            print(smile_count, worried_count, pale_count, anxious_count, surprise_count, other_count, angry_count)
+
             # part 2 -eye movement detection
 
             # We send this frame to GazeTracking to analyze it
@@ -175,6 +175,8 @@ def gen_frames(List):
             #popupmsg("The processing of video is finished you can check the results now", "processing")
             #switch = 0
     print("frame count------------",frame_cnt)
+    print( "Data: ")
+    print(smile_count, worried_count, pale_count, anxious_count, surprise_count, other_count, angry_count)
     cal(frame_cnt)
     eyecal(List)
     camera.release()
@@ -346,7 +348,7 @@ def upload_old():
 
 #function for calculation of face expression
 def cal(frame_cnt):
-    global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,blink_cnt
+    global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,blink_cnt, percent_smile
     smilenormal_threshold =0
     worriedanxioussurprise_threshold = 0
     angry_threshold = 0
@@ -356,6 +358,7 @@ def cal(frame_cnt):
     angry_threshold = frame_cnt/4
     other_threshold = frame_cnt/4
     blink_cnt = frame_cnt/22
+    percent_smile = ((smile_count/frame_cnt)*100)
 
 #function for calculation of eye movement
 def eyecal(List):
@@ -390,8 +393,13 @@ def tasks1():
         if  request.form.get('stop') == 'Get Report': 
             #returning values to home page to use in script for printing  
             speechtotext()   
-            return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech)
-        
+            return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, 
+            data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,
+            data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,
+            var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , 
+            pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech,
+            sm = percent_smile)
+    
          
 
 #main     
