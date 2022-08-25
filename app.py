@@ -134,7 +134,8 @@ def gen_frames(List):
                 other_count = other_count+1
             elif final_emotion == emotions[6]:
                 angry_count = angry_count+1
-
+            print( "Data: ")
+            print(smile_count, worried_count, pale_count, anxious_count, surprise_count, other_count, angry_count)
             # part 2 -eye movement detection
 
             # We send this frame to GazeTracking to analyze it
