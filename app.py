@@ -358,7 +358,7 @@ def cal(frame_cnt):
     angry_threshold = frame_cnt/4
     other_threshold = frame_cnt/4
     blink_cnt = frame_cnt/22
-    percent_smile = ((smile_count/frame_cnt)*100)
+    percent_smile = int((smile_count/frame_cnt)*100)
 
 #function for calculation of eye movement
 def eyecal(List):

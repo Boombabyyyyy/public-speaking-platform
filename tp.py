@@ -34,5 +34,5 @@ print(angry, disgust, fear, happy, sad, surprise, neutral)
 """
 smile_count = 300
 frame_cnt = 1288
-percent_smile = ((smile_count/frame_cnt)*100)
+percent_smile = int((smile_count/frame_cnt)*100)
 print(percent_smile)
