@@ -289,7 +289,7 @@ def speechtotext():
     
     #code suggested
     p="audio" # Audio File title
-    c=r"D:\monami_project" 
+    c=r"/mountdisk/PSnew" 
     pauses = mysppaus(p,c)
     articulates = myspatc(p,c)
     duration = myspod(p,c)
