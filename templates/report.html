@@ -33,10 +33,11 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
 
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="/">Home</a></li>
                             <li class="scroll-to-section"><a href={{ url_for('uploading') }}>
                                 Practice
                             </a></li>
+                            <li class="scroll-to-section"><a href="#top" class="active">Report</a></li>
                         <!--    <li class="scroll-to-section"><a href="#services">Services</a></li> -->
                         </ul>
                         <a class='menu-trigger'>
@@ -68,7 +69,7 @@
                 <div class="blog-post">
                     <div class="down-content">
                         <div class="left-text">
-                            <h4>This is what you spoke</h4>
+                            <h4>This is what you spoke:</h4>
                             {% if transcript != "" %}
                             <p>{{ transcript }}</p>
                             
