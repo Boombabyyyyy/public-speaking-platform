@@ -342,6 +342,10 @@ def index():
 def home():
     return render_template('normal.html')  
 
+@app.route('/report')
+def report():
+    return render_template('report.html')
+
 @app.route('/upload_old')
 def upload_old():
     return render_template('upload_old.html')
