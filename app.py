@@ -405,10 +405,12 @@ def tasks1():
             sm = percent_smile)
     
          
-
-#main     
+#main
 if __name__ == '__main__':
+    context = ('/etc/nginx/ssl/lightinfosys.crt', '/etc/nginx/ssl/lightinfosys.key')
+    app.run(host='0.0.0.0', port=5000, debug=True, ssl_context=context)
     app.run(debug=True)
+
 
 
 
