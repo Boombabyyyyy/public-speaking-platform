@@ -36,6 +36,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 #declaration of variables
 global capture, switch,execution ,frame_cnt,smile_count,pale_count,worried_count,anxious_count,surprise_count,angry_count,blink_cnt,other_count
 global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,a,b, percent_smile
+global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c
 #speech variable initialized
 global recording,file_exists,exe,var,text,listing,grammermist,pauses,articulates,duration,rate_of_speech,ready
 capture=0
@@ -364,6 +365,15 @@ def cal(frame_cnt):
     blink_cnt = frame_cnt/22
     percent_smile = int((smile_count/frame_cnt)*100)
 
+goodblink=False
+noblink=False
+moreblink=False
+goodeye=False
+badeye=False
+videoerr=False
+c=12
+i=88
+
 #function for calculation of eye movement
 def eyecal(List):
     global blink_cnt,movement,a,b
@@ -378,6 +388,36 @@ def eyecal(List):
 
         if a != b :
             movement = movement+1
+    i=88
+    while (i < frame_cnt):
+        if (blink_cnt == frame_cnt/22):
+            i = i * 2
+            goodblink=True
+            break
+        elif (blink_cnt < frame_cnt/22):
+            i = i * 2
+            noblink=True
+            break
+        else:
+            moreblink=True
+            break
+    c=12
+    if (frame_cnt > 88):
+        if (movement > frame_cnt/c):
+            badeye = True
+            c=c*i
+        else:
+            goodeye = True
+    else:
+        videoerr = True
+    
+
+
+
+
+
+
+
     
 
 #function to view video feed on screen
@@ -402,7 +442,8 @@ def tasks1():
             data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,
             var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , 
             pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech,
-            sm = percent_smile)
+            sm = percent_smile, i = i, goodblink = goodblink, noblink = noblink, moreblink =moreblink, goodeye = goodeye,
+            c=c, badeye=badeye, videoerr=videoerr)
     
          
 #main
