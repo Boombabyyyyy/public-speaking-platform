@@ -271,8 +271,15 @@
                     <div class="down-content">
                         <div class="left-text">
                             <h4>Blinking</h4>
-
-                            {% if goodblink %}
+                            <p>
+                            {{goodblink}}
+                            {{noblink}}
+                            {{moreblink}}
+                            {{ goodeye }}
+                            {{ badeye }}
+                            {{ videoerr }}
+                            </p>
+                            {% if goodblink==True %}
 
                             <p>
                                 <b><span style="color: green"><b>STRENGTH → </b></span></b> <b>
@@ -280,7 +287,7 @@
 
                             </p>
 
-                            {% elif noblink %}
+                            {% elif noblink==True %}
 
                             <p>
                                 <b><span style="color: red"><b>WEAKNESS → </b></span></b> 
@@ -293,7 +300,7 @@
 
                             </p>
 
-                            {% elif moreblink %}
+                            {% elif moreblink==True %}
                             <p>
                                 <b><span style="color: red"><b>WEAKNESS → </b></span></b> 
                                 <b>Excessive blinking during speech.</b>
@@ -335,7 +342,7 @@
 
                             </p>
 
-                            {% elif badeye %}
+                            {% elif badeye==True %}
                             <p>
                                 <b><span style="color: red"><b>WEAKNESS → </b></span></b> 
                                 <b>Disconnecting eye contact throughout presentation</b>
@@ -345,7 +352,7 @@
                                     <br>You can practice to keep looking at yourself while recording with this AI powered tool
                                     <br>If you are camera shy, it’ll go away after some time of practicing.</b>
                             </p>
-                            {% elif videoerr %}
+                            {% elif videoerr==True %}
                             <p>
                                 <b></b> <b><b>
                                     Video too short, Please record a video longer than 1 minute.</b></b>
