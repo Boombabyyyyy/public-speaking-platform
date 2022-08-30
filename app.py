@@ -397,7 +397,7 @@ def tasks1():
         if  request.form.get('stop') == 'Get Report': 
             #returning values to home page to use in script for printing  
             speechtotext()   
-            return render_template('normal.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, 
+            return render_template('report.html',data = frame_cnt , data1 = smile_count ,data2 = pale_count, 
             data3 = worried_count,data4 = anxious_count,data5 = surprise_count,data6 = angry_count,
             data7 = blink_cnt,data8 = other_count ,var1 = smilenormal_threshold,var2 = worriedanxioussurprise_threshold ,
             var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , 

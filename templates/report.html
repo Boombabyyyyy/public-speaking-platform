@@ -64,7 +64,8 @@
                   </div>
                 </div>
 
-        
+            <!-- ***** this is what you spoke ***** -->
+
             <div class="col-lg-12 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="blog-post">
                     <div class="down-content">
@@ -84,35 +85,100 @@
         </div>
     </div>
   </div> 
+</div>
 
-        <br>
+<div id="services" class="services section">
+    <div class="container">
+        <div class="row">
+                <center><p>KNOW YOUR STRENGTHS AND WEAKNESSES</p></center>
+                <center><h3>Facial Expression Analysis Summary</h3></center>
+                <div class="line-dec"></div>
+                <br>
+                <br>
 
-         <!-- ***** this is what you spoke ***** -->
-
-         <section class="section" id="blog" style=" background-color: #9ccaf3;">
-
-            <div class="container mb-3">
-                <div class="blog-wrapper">
-                    <div class="img-wrapper">
-                        <div class="cont">
-                            <div class="card1" style="background-color: rgb(244, 244, 252); padding-left: 1cm; padding-right: 1cm;padding-top: 10px;padding-bottom: 10px;">
-                                <h3 style="font-family: Georgia, 'Times New Roman', Times, serif; color: #040607"><b>This is what you spoke</b></h3><br>
-                                <div>
-                                    
-                            
-                                    {% if transcript != "" %}
-                                        <div id="speechTranscriptContainer">
-                                            <p id="speechText">{{ transcript }}</p>
-                                        </div>
-                                    {% endif %}
+            <!-- ***** SMILE OUTCOME  ***** -->
+            <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="blog-post">
+                <div class="down-content">
+                    <div class="left-text">
+                        <h4>Smile</h4>
+                        {% if data1 == 0 %}
+                        <p>
+                            <b><span style="color: red"><b>WEAKNESS → </b></span></b> <b>You did not smile.</b>
                                 <br>
+                            <b><b>FEEDBACK → </b></b> <b>Smiling is a very important part of presentation.</b>
+                            
+                        </p>
+                        
+                        
+                        {% elif data1>var1 %}
+                        <p>
+                            <b><span style="color: red"><b>WEAKNESS → </b></span></b> <b>Permanent smile on face through presentation.</b>
+                                <br>
+                            <b><b>FEEDBACK → </b></b> <b>Smiling is an important part of presentation 
+                                but try avoiding smiling constantly. Sometimes you tend to make up for your awkwardness with smiles.
+                                Don’t feel too conscious and just relax.
+                                <br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the audience. 
+                                But an enduring smile can come off as unnatural and give you out as awkward.<br></b>
+                            
+                        </p>
+
+                        {% elif sm > 15 %}
+                        <p>
+                            <b>You smiled <b>{{ sm }}</b> percent of the speech!</b>
+                                <br>
+                            <b><b><span style="color: green"><b>STRENGTH → </b></span></b></b> <b>Appropriate amount of smiling. Well done!</b>
+                            
+                        </p>
+
+                        {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- ***** PALE FACE OUTCOME  ***** -->
+            <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="blog-post">
+                    <div class="down-content">
+                        <div class="left-text">
+                            <h4>Pale</h4>
+                            {% if data2 > var1 %}
+                            <p>
+                                <b><span style="color: red"><b>WEAKNESS → </b></span></b> <b>You had very little expression while speaking.</b>
+                                    <br>
+                                <b><b>FEEDBACK → </b></b> <b>Try to relax and give some natural expressions on your face. 
+                                    Keep recording yourself and keep improving based on the feedback . 
+                                    And you’ll see the improvement yourself.
+                                    <br>
+                                    <b>Pro Tip: </b>Facial expressions combined with verbal delivery helps to engage and connect with the audience.
+                                    Verbal and non-verbal communication should be matched to avoid confusion in audience</b>
                                 
-                            </div>
-                        </div>
+                            </p>
+                            {% else %}
+
+                            <p>
+                                <b><span style="color: green"><b>STRENGTH → </b></span></b> <b>Amazing presentation! Your facial expressions were on point.</b>
+                                
+                            </p>
+
+                            {% endif %}
+
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    
+
+</div>
+</div>
+</div> 
+</div>
+</div>
+
+        <br>
+
+         
     
     
      <!-- ***** facial expression  ***** -->
@@ -122,29 +188,7 @@
         <div class="container mb-3">
             <h6 class="xs-font mb-0">Know your strengths and weakness</h6>
             <h3 class="section-title mb-5">Facial Expression Analysis Summary</h3>
-            
-            <div class="blog-wrapper" >
-                <div class="img-wrapper">
-                    <h5 class="blog-title">
-                        <span>&#10003;</span>&nbsp;Smile</h5>
-                    <script>
-                        var smile = '{{ data1 }}';
-                        var smilethresh = '{{ var1 }}';
-                        var sm = '{{ sm }}';
-                        if(smile == 0){
-                            document.write("<b>WEAKNESS → <b>You did not smile.<br>");
-                            document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation.<br>");
-                        }
-                        else if (smile > smilethresh) {
-                                    document.write("<b>WEAKNESS → <b>Permanent smile on face through presentation.<br>");
-                                    document.write("<br><b>FEEDBACK → </b>Smiling is a very important part of presentation but try avoiding smiling constantly.<br>Sometimes you tend to make up for your awkwardness with smiles.<br>Don’t feel too conscious and just relax.<br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the audience. But an enduring smile can come off as unnatural and give you out as awkward.<br>");
-                                }
-                        else if (sm>10) {
-                                    document.write("You smiled " + sm + " percent of the speech!<br>");
-                                    document.write("<br>");
-                                    document.write("<b>STRENGTH → </b> Appropriate amount of smiling. Well done!<br>");
-                                }
-                    </script>
+        
             <!-- ***** PALE FACE OUTCOME  ***** -->
                 <br>        
                 <h5 class="blog-title">
