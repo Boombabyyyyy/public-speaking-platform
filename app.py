@@ -376,7 +376,7 @@ i=88
 
 #function for calculation of eye movement
 def eyecal(List):
-    global blink_cnt,movement,a,b
+    global blink_cnt,movement,a,b,goodblink,noblink,moreblink,goodeye,badeye,videoerr
     movement = 0
     blink_cnt = 0
     a=[]
