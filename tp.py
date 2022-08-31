@@ -32,7 +32,26 @@ emotions_values = [angry, disgust, fear, happy, sad, surprise, neutral]
 
 print(angry, disgust, fear, happy, sad, surprise, neutral)
 """
-smile_count = 300
-frame_cnt = 1288
-percent_smile = int((smile_count/frame_cnt)*100)
-print(percent_smile)
+# smile_count = 300
+# frame_cnt = 1288
+# percent_smile = int((smile_count/frame_cnt)*100)
+# print(percent_smile)
+
+import language_tool_python
+tool = language_tool_python.LanguageTool('en-US')
+text = "I has lot's of apples"
+matches = tool.check(text)
+len(matches)
+mistakes=[tool]
+crt_text=tool.correct(text)
+text_list=text.split()
+crt_text_list=crt_text.split()
+l=[]
+for i in range(len(text_list)):
+    if text_list[i]!=crt_text_list[i]:
+        l.append(crt_text_list[i])
+print(text)
+print(crt_text)
+print(text_list)
+print(crt_text_list)
+print(l)

@@ -1,0 +1,19 @@
+{% set transcript = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices libero in justo tristique mollis." %}
+{% set data1 = 100 %}
+{% set var1=20 %}
+{% set sm=20 %}
+
+{% set data2 = 100 %}
+
+{% set data6 = 100 %}
+{% set var3=20 %}
+
+{% set data8 = 100 %}
+{% set var4=20 %}
+
+{% set goodblink = True %}
+{% set noblink= False%}
+{% set moreblink = False  %}
+{% set goodeye = True %}
+{% set badeye = False %}
+{% set videoerr = False %}

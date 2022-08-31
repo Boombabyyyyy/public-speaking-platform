@@ -1373,6 +1373,17 @@ Services Style
   color: #4da6e7 !important;
 }
 
+.services .left-text h5 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #4da6e7 !important;
+}
+
+.services .left-text h6 {
+  font-weight: 700;
+  color: #4da6e7 !important;
+}
+
 .services .left-text p {
   margin-bottom: 30px;
 }
