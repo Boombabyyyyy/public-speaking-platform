@@ -59,14 +59,6 @@ worriedanxioussurprise_threshold = 0
 angry_threshold = 0
 other_threshold = 0
 movement = 0
-goodblink=False
-noblink=False
-moreblink=False
-goodeye=False
-badeye=False
-videoerr=False
-c=12
-i=88
 a=[]
 b=[]
 List = []
@@ -433,7 +425,7 @@ i=88
 
 #function for calculation of eye movement
 def eyecal(List):
-    global blink_cnt,movement,a,b,goodblink,noblink,moreblink,goodeye,badeye,videoerr
+    global blink_cnt,movement,a,b,goodblink,noblink,moreblink,goodeye,badeye,videoerr, i
     movement = 0
     blink_cnt = 0
     a=[]
