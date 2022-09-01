@@ -10,6 +10,7 @@ from gaze_tracking import GazeTracking
 from deepface import DeepFace
 import json
 
+
 #speech recognization import start
 import speech_recognition as sr
 import sounddevice as sd
@@ -313,11 +314,11 @@ def speechtotext():
     crt_text_list=crt_text.split()
     crt_l=[]
     t_l=[]
-    for i in range(len(text_list)):
+    for i in range(len(crt_text_list)):
         if text_list[i]!=crt_text_list[i]:
             crt_l.append(crt_text_list[i])
     print(crt_l)
-    for i in range(len(text_list)):
+    for i in range(len(crt_text_list)):
         if text_list[i]!=crt_text_list[i]:
             t_l.append(text_list[i])
     print(t_l)
