@@ -36,10 +36,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 #declaration of variables
 global capture, switch,execution ,frame_cnt,smile_count,pale_count,worried_count,anxious_count,surprise_count,angry_count,blink_cnt,other_count
 global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,a,b, percent_smile
-global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c
+global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c, artigood
 #speech variable initialized
 global recording,file_exists,exe,var,text,listing,grammermist,pauses,articulates,duration,rate_of_speech,ready
-global matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l
+global matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l, ros_mins, ros_perf, ros_slow, ros_fast, ros_error
 capture=0
 switch=1
 execution = 0
@@ -268,7 +268,12 @@ def myspsr(m,p):
 
 #function for speech to text
 def speechtotext():
-    global text,grammermist,pauses,articulates,duration,rate_of_speech, matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l
+    global text,grammermist,pauses,articulates,duration,rate_of_speech, matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l, ros_perf, ros_slow, ros_fast, ros_mins, ros_error, artigood
+    ros_perf=False
+    ros_slow=False
+    ros_fast=False
+    artigood = False
+
     r = sr.Recognizer()
 
     file_audio = sr.AudioFile('audio.wav')
@@ -311,7 +316,29 @@ def speechtotext():
     articulates = myspatc(p,c)
     duration = myspod(p,c)
     rate_of_speech = myspsr(p,c)
-    return grammermist,pauses,articulates,duration,rate_of_speech,text
+
+    ros_mins = rate_of_speech*60
+
+    if (rate_of_speech == 2 or rate_of_speech == 3):
+        ros_perf = True
+    
+    elif (rate_of_speech < 2):
+        ros_slow = True
+
+    elif (rate_of_speech > 3):
+        ros_fast = True
+    
+    else:
+        ros_error = True
+
+    if articulates >=4 and articulates <=5:
+        artigood = True
+
+    
+        
+
+    return grammermist,pauses,articulates,duration,rate_of_speech,text,ros_mins,ros_perf,ros_slow,ros_fast,ros_error
+
 
     
 #rendering to home page             
@@ -459,13 +486,14 @@ def tasks1():
             var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , 
             pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech,
             sm = percent_smile, i = i, goodblink = goodblink, noblink = noblink, moreblink =moreblink, goodeye = goodeye,
-            c=c, badeye=badeye, videoerr=videoerr, crt_text=crt_text, crt_l=crt_l, t_l=t_l)
+            c=c, badeye=badeye, videoerr=videoerr, crt_text=crt_text, crt_l=crt_l, t_l=t_l, ros_mins=ros_mins,
+            ros_perf=ros_perf,ros_slow=ros_slow,ros_fast=ros_fast,ros_error=ros_error, artigood=artigood)
     
          
 #main
 if __name__ == '__main__':
-    context = ('/etc/nginx/ssl/lightinfosys.crt', '/etc/nginx/ssl/lightinfosys.key')
-    app.run(host='0.0.0.0', port=5000, debug=True, ssl_context=context)
+    # context = ('/etc/nginx/ssl/lightinfosys.crt', '/etc/nginx/ssl/lightinfosys.key')
+    # app.run(host='0.0.0.0', port=5000, debug=True, ssl_context=context)
     app.run(debug=True)
 
 

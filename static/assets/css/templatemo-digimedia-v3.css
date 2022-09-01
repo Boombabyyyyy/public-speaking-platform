@@ -1226,7 +1226,7 @@ Services Style
   left: 0;
   top: 0px;
   width: 786px;
-  height: 1217px;
+  height: 0px;
   z-index: 0;
 }
 
@@ -1238,7 +1238,7 @@ Services Style
   right: 0;
   top: 400px;
   width: 161px;
-  height: 413px;
+  height: 0px;
   z-index: 0;
 }
 
@@ -1940,7 +1940,8 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 130px;
+  margin-top: 10px;
+  height: 80px;
 }
 
 footer p {

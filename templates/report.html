@@ -12,7 +12,7 @@
     }
 </style>
 
-<title>public speaking practice</title>
+<title>Public Speaking Practice</title>
 {% endblock %}
 
 {% block body %}
@@ -46,6 +46,8 @@
         </div>
     </div>
 </header>
+
+<!-- Variables for local testing here -->
 
 <!-- Title -->
 <br>
@@ -404,28 +406,34 @@
 
                             {% endif %}
 
-                            <h5>Confidence Level</h5>
+                            <h5>Number of Pauses(Disfluency Analysis)</h5>
                             <!-- data6=Angry count, var3=angry threshold -->
-                            {% if data6 > var3 %}
+                            {% if pau == dur %}
                             <p>
+                                <b><b>Number of pauses/instances of disfluency : {{ pau }}</b></b>
+                                <br>
                                 <b><span style="color: red"><b>WEAKNESS → </b></span></b>
-                                <b>You looked too nervous during your presentation.</b>
+                                <b>You took too many pauses while speaking.</b>
                                 <br>
                                 <b><b>FEEDBACK → </b></b> <b>
-                                    Even if you're nervous, act confident! Don't let the audience know your nervous 🤫✨
+                                    It's okay to take pauses. Be comfortable with it. But don't overuse it.
+                                    Avoid using filler words like : <i>um, uh, like</i> 
+                                    and you will find your audience totally engaged in your speech.
 
                                     <br>
                                     <b>Pro Tip:
-                                    </b>Fake it till you make it is a foolproof stratergy when it comes to public
-                                    speaking.</b>
+                                    </b>Learn to pause like a pro. Don't pause for more than 2 seconds
+                                    <br>Use your pauses when moving from one idea to another.
+                                    <br>Use your pauses for dramatic effect.🎭🤩</b>
 
                             </p>
                             {% else %}
 
                             <p>
                                 <b><span style="color: green"><b>STRENGTH → </b></span></b> <b>
-                                    You were relaxed and confident throughout. Good job! <br>💯👍</b>
-
+                                    No of pauses and filler words used : {{ pau }}</b><br>
+                                    <b><b>FEEDBACK → </b></b> <b> 
+                                        Your timing and frequency of pauses are compatible with your speech duration. Good job! <br>💯👍</b>
                             </p>
 
                             {% endif %}
@@ -485,119 +493,108 @@
 </div>
 </div>
 
-                <section class="section" id="blog" style=" background-color: #9ccaf3;">
+<!-- ***** Rate of speech  ***** -->
+<div id="services" class="services section">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="blog-post">
+                    <div class="down-content">
+                        <div class="left-text">
+                            <h4>Rate of speech</h4>
+                            <!-- <p>
+                            {{ ros }}    
+                            {{ ros_mins }}
+                            {{ ros_perf }}
+                            {{ ros_slow }}
+                            {{ ros_fast }}
+                            {{ ros_error }}
+                            {{ videoerr }}
+                            </p> -->
 
-                    <div class="container mb-3">
-                        <h6 class="xs-font mb-0">Know your strengths and weakness</h6>
-                        <h3 class="section-title mb-5">Voice Analysis Summary</h3>
+                            {% if ros_perf == True %}
 
-                        <div class="blog-wrapper">
-                            <div class="img-wrapper">
-                                <h5 class="blog-title">
-                                    <span>&#10003;</span>&nbsp;Grammar
-                                </h5>
-                                <script>
-                                    var text1 = '{{ gram }}';
+                            <p>
+                                <b><b>You spoke {{ ros_mins }} words per minute</b></b><br>
+                                <b><span style="color: green"><b>STRENGTH → </b></span> Rate of speech is perfect, awesome work! 💯✨</b> <b>
+                                </b>
 
-                                    if (text1 > 5) {
-                                        document.write("<b>WEAKNESS → </b>Grammar needs improvement.Check out the grammatical mistakes you have made in the  <b>This is what you spoke</b> segment.<br><br>");
-                                        document.write("<b>FEEDBACK → </b>Reading English books and watching English content can help in building up an idea of grammar.<br>");
-                                    }
-                                    else {
-                                        document.write("<b>STRENGTH → </b> Good at grammar, no mistakes found <br><br>");
-                                    }
-                                    if (text1 = 0) {
-                                        document.write("<br> let's start recording <br>");
-                                    }
-                                </script>
+                            </p>
 
+                            {% elif ros_slow %}
 
+                            <p>
+                                <b><b>You spoke {{ ros_mins }} words per minute</b></b><br>
+                                <b><span style="color: red"><b>WEAKNESS → </b></span></b>
+                                <b>Your rate of speech is below 2-3 words per second, the standard public speaking speech-rate. 📉🙅</b>
                                 <br>
-                                <h5 class="blog-title">
-                                    <span>&#10003;</span>&nbsp;Number Of Pauses
-                                </h5>
-                                <script>
-                                    var pauses = '{{ pau }}';
-                                    var duration = '{{ dur }}'
-
-
-                                    if (pauses == duration) {
-                                        document.write("<b>Number of pauses/instances of disfluency : ", pauses, "<br></b>");
-
-                                        document.write("<br> <b>WEAKNESS → </b>You took too many pauses while speaking<br><br>");
-                                        document.write("<b>FEEDBACK → </b>It's okay to take pauses. Be comfortable with it. But don’t overuse it.<br>Avoid using filler words like : <b>um, uh, like</b> and you will find your audience totally engaged in your speech.");
-                                        document.write("<br><b>Pro Tip:</b> Learn to pause like a pro. <br>Don’t pause for more than 2 seconds<br>Use your pauses when moving from one idea to another<br>Use your pauses for dramatic effect");
-                                        document.write("<br>")
-                                    }
-
-                                    else {
-                                        document.write("<b>No of pauses and filler words used : ", pauses, "<br></b>");
-                                        document.write("<br><b>FEEDBACK → </b>Your timing and frequency of pauses are compatible with your speech duration. Good job!<br><br>");
-                                    }
-                                    if (pauses == 0) {
-                                        document.write("<br> Let's start recording<br>");
-                                    }
-
-
-                                </script>
+                                <b><b>FEEDBACK → </b></b> <b>A slow rate of speech can make the audience lose interest in your speech.
+                                    Practice your speech before this AI tool over and over and try to improve the rate of speech with 
+                                    each recording.</b>
                                 <br>
-                                <h5 class="blog-title">
-                                    <span>&#10003;</span>&nbsp;Rate Of Speech
-                                </h5>
-                                <script>
+                                <b><b>Pro Tip:
+                                    </b>You can watch videos of your favorite speakers and try to follow their speed of speech for practice.</b></b>
 
-                                    var rate_of_speech = '{{ ros }}'
+                            </p>
 
-                                    //document.write(rate_of_speech)
-                                    if (rate_of_speech == 2 || rate_of_speech == 3) {
-                                        rate_of_speech = rate_of_speech * 60;
-                                        document.write("<b>You spoke : ", rate_of_speech, " words per minute </b><br>");
-                                        document.write("<br><b>STRENGTH → </b> Rate of speech is perfect <br><br>");
-                                    }
-                                    else if (rate_of_speech < 2) {
-                                        rate_of_speech = rate_of_speech * 60;
-                                        document.write("<b>You spoke :", rate_of_speech, " words per minute <br></b>");
-                                        document.write("<br><b>WEAKNESS → </b>(NO OF RATE OF SPEECH IN PER SEC) <br>Your rate of speech is below 2-3 words per second, the standard public speaking speech-rate.<br><br>");
-                                        document.write("<br><b>FEEDBACK → </b>A few words can be taken out OR added to this number, but don’t go below 130 and above 150.<br>A slow rate of speech can make the audience lose interest in your speech.<br>Practice your speech before this AI tool over and over and try to improve the rate of speech with each recording.");
-                                        document.write("<br><b>Pro Tip: </b>You can watch videos of your favorite speakerS and try to follow their speed of speech for practice.<br>");
-                                    }
-                                    else if (rate_of_speech > 3) {
-                                        rate_of_speech = rate_of_speech * 60;
-                                        document.write("<b>You spoke :", rate_of_speech, " words per minute <br></b>");
-                                        document.write("<br><b>WEAKNESS → </b>Your rate of speech is too fast for the audience to understand.<br>");
-                                        document.write("<b>SUGGESTION→ </b>Your rate of speech determines how clearly your message is understood by the audience or if they think you are rambling. Try to stay between 130 to 150 words per minute. <br>Nervousness can also be a reason for a fast rate of speech. Try to relax.<br>Keep practicing with this AI friend and try slowing down your speech following the feedback.");
-                                        document.write("<br>");
-                                    }
-                                    if (rate_of_speech == 0) {
-                                        document.write("<br>Let's start recording <br>");
-                                    }
-                                </script>
-
+                            {% elif ros_fast==True %}
+                            <p>
+                                <b><b>You spoke {{ ros_mins }} words per minute</b></b><br>
+                                <b><span style="color: red"><b>WEAKNESS → </b></span></b>
+                                <b>Your rate of speech is too fast for the audience to understand.</b>
                                 <br>
-                                <h5 class="blog-title">
-                                    <span>&#10003;</span>&nbsp;Articulation
-                                </h5>
-                                <script>
-                                    var articulation_rate = '{{ arti }}';
+                                <b><b>FEEDBACK → </b></b> <b></b><b>
+                                Your rate of speech determines how clearly your message is understood by the audience or if they think you are rambling. 
+                                Try to stay between 130 to 150 words per minute. <br>Nervousness can also be a reason for 
+                                a fast rate of speech. Try to relax.🧘‍♀️💃🕺<br>Keep practicing with our AI powered platform and try slowing 
+                                down your speech.</b>
+                            </p>
 
-                                    if (articulation_rate >= 4 && articulation_rate <= 5) {
-                                        document.write("<b>STRENGTH → </b>Crispy! you were very clear with your words<br>");
-                                    }
-                                    else {
-                                        document.write("<br><b>WEAKNESS → </b>Your Articulation needs some work.<br>");
-                                        document.write("<b>FEEDBACK → </b>You can watch English content and observe how they are clear and confident with each word to work on your articulation.<br>");
-                                        document.write("<br><b>Pro Tip:</b> A really useful way is to read English content and at the same time listen to the same content using tools with the “read aloud article” feature. Try it. It’s pretty awesome!");
+                            {% elif ros_error == true %}
+                            <p> *Cricket Noises*... Something went wrong :( Please ensure your video is longer than 1 Minute!</p>
 
-                                    }
-                                    if (articulation_rate = 0) {
-                                        document.write("<br> Let's start recording <br>");
-                                    }
-                                </script>
+                            {% else %}
+                            <p> *Cricket Noises*... Something went wrong :( Please ensure your video is longer than 1 Minute!</p>
+                    
 
-                            </div>
+                            {% endif %}
+
                         </div>
                     </div>
-                </section>
+                </div>
+            </div>
+
+            <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div class="blog-post">
+                    <div class="down-content">
+                        <div class="left-text">
+                            <h4>Articulation </h4>
+                            {% if artigood == True %}
+                                
+                                    <p>
+                                        <b><span style="color: green"><b>STRENGTH → </b></span></b> <b>
+                                            You were very clear with your words, Crispy! 🔥💯👍</b>
+
+                                    </p>
+
+                            {% else %}
+                            <p>
+                                <b><span style="color: red"><b>WEAKNESS → </b></span></b>
+                                <b>Your Articulation needs some work.</b>
+                                <br>
+                                <b><b>FEEDBACK → </b></b> <b></b><b>You can watch English content and observe how they are clear and confident 
+                                    with each word to work on your articulation.</b>
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                 <!-- Scripts -->
                 <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>

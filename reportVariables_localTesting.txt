@@ -1,4 +1,3 @@
-<!-- Variables for local testing here -->
 <!-- here make data>var for weakness and vice versa -->
 {% set transcript = "I has lot's of apples because i go to an supermarket" %}
 {% set crt_text = "I have lots of apples because i go to the supermarket" %}
@@ -19,7 +18,24 @@
 {% set badeye = False %}
 {% set videoerr = False %}
 
+
 <!-- voice variables -->
+<!-- grammar -->
 {% set gram = 10 %}
 {% set crt_l = ["has", "lot's", "an"] %}
 {% set t_l = ["have", "lots", "the"] %}
+
+<!-- pauses -->
+{% set pau = 100 %}
+{% set dur = 10 %}
+
+<!-- rate of speech -->
+{% set ros = 3 %}
+{% set ros_mins = 180 %}
+{% set ros_perf = False %}
+{% set ros_slow = False  %}
+{% set ros_fast = True  %}
+{% set ros_error = False  %}
+
+<!-- Articulation -->
+{% set artigood = True %}
