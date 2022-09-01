@@ -72,6 +72,11 @@ pauses = 0
 articulates = 0
 duration = 0
 rate_of_speech = 0
+ros_error = False
+ros_fast = False
+ros_perf = False
+ros_slow = False
+ros_mins = 0
 #end
 
 #Load pretrained face detection model    
