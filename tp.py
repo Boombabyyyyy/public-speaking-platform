@@ -46,12 +46,9 @@ mistakes=[tool]
 crt_text=tool.correct(text)
 text_list=text.split()
 crt_text_list=crt_text.split()
-l=[]
+crt_l=[]
 for i in range(len(text_list)):
     if text_list[i]!=crt_text_list[i]:
-        l.append(crt_text_list[i])
-print(text)
-print(crt_text)
-print(text_list)
-print(crt_text_list)
-print(l)
+        crt_l.append(crt_text_list[i])
+print(crt_l)
+

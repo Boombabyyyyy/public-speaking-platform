@@ -1379,6 +1379,16 @@ Services Style
   color: #4da6e7 !important;
 }
 
+.blog-post mark {
+    background-color: #FFCCCB;
+    color: black;
+  
+}
+
+.services li.menu-item {
+  margin:0 0 10px 0;   
+}
+
 .services .left-text h6 {
   font-weight: 700;
   color: #4da6e7 !important;

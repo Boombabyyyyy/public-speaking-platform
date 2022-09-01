@@ -47,30 +47,6 @@
     </div>
 </header>
 
-<!-- Variables for local testing here -->
-<!-- here make data>var for weakness and vice versa -->
-{% set transcript = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices libero in justo tristique
-mollis." %}
-
-{% set data1 = 10 %}
-{% set var1=20 %}
-{% set sm=20 %}
-{% set data2 = 10 %}
-
-{% set data6 = 10 %}
-{% set var3=20 %}
-
-<!-- Make goods true for strength and vice versa, kinda obvious still. -->
-{% set goodblink = True %}
-{% set noblink= False%}
-{% set moreblink = False %}
-{% set goodeye = True %}
-{% set badeye = False %}
-{% set videoerr = False %}
-
-<!-- voice variables -->
-{% set gram = 10 %}
-
 <!-- Title -->
 <br>
 <br>
@@ -93,7 +69,7 @@ mollis." %}
                         <div class="left-text">
                             <h4>This is what you spoke:</h4>
                             {% if transcript != "" %}
-                            <p>{{ transcript }}</p>
+                            <p><b>{{ transcript }}</b></p>
 
                             {% else %}
                             <p> *Cricket Noises*... Something went wrong :( there's no transcript here!</p>
@@ -464,52 +440,39 @@ mollis." %}
                 <div class="blog-post">
                     <div class="down-content">
                         <div class="left-text">
-                            <!-- transcript=transcript of speech, corrected=grammatically corrected transcript -->
-                            <h4>Smile</h4>
-                            {% if data1 == 0 %}
-                            <p>
-                                <b><span style="color: red"><b>WEAKNESS → </b></span></b> <b>You did not smile enough
-                                    ☹️</b>
-                                <br>
-                                <b><b>FEEDBACK → </b></b> <b>Smiling is a very important part of presentation.🙂💯</b>
+                            <!-- transcript=transcript of speech, crt_text=grammatically corrected transcript -->
+                            <h5>Orignal Transcript (This is what you spoke)</h5>
 
-                            </p>
-
-
-                            {% elif data1>var1 %}
-                            <p>
-                                <b><span style="color: red"><b>WEAKNESS → </b></span></b> <b>Permanent smile on face
-                                    through presentation. 😬</b>
-                                <br>
-                                <b><b>FEEDBACK → </b></b> <b>Smiling is an important part of presentation
-                                    but try avoiding smiling constantly. Sometimes you tend to make up for your
-                                    awkwardness with smiles.
-                                    <br>
-                                    Don't feel too conscious and just relax 😬🌚
-                                    <br><b>Pro Tip:</b> Smiling makes you and your speech more receptive to the
-                                    audience.
-                                    But an enduring smile can come off as unnatural and give you out as awkward.<br></b>
-
-                            </p>
-
-                            {% elif sm > 15 %}
-                            <p>
-                                <b>You smiled <b>{{ sm }}</b> percent of the speech!</b>
-                                <br>
-                                <b><b><span style="color: green"><b>STRENGTH → </b></span></b></b> <b>Appropriate amount
-                                    of smiling. Well done! 😁💯✨</b>
-
-                            </p>
+                            {% if transcript != "" %}
+                            <p><b>{{ transcript }}</b></p>
 
                             {% else %}
-
-                            <p>
-                                <b></b> <b><b>
-                                        Something went wrong :( *Awkward Smiling*</b></b>
-
-                            </p>
+                            <p> *Cricket Noises*... Something went wrong :( there's no transcript here!</p>
 
                             {% endif %}
+
+                            <h5>grammatically corrected transcript</h5>
+                            
+                            {% if crt_text != "" %}
+                            <p><b>{{ crt_text }}</b></p>
+
+                            {% else %}
+                            <p> *Cricket Noises*... Something went wrong :( there's no transcript here!</p>
+
+                            {% endif %}
+                            
+                            <h5>Corrections</h5>
+    
+                            {% for t in range(crt_l|length) %}
+                                <p>
+                                <b>
+                                <mark style="background-color:#FFCCCB";>{{ crt_l[loop.index - 1] }}</mark> -> <mark style="background-color:lightgreen";>{{ t_l[loop.index - 1] }}</mark>
+                                <br>
+                                </b>
+                                </p>    
+
+                        
+                            {% endfor %}
 
                         </div>
                     </div>

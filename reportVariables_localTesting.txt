@@ -1,19 +1,25 @@
-{% set transcript = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices libero in justo tristique mollis." %}
-{% set data1 = 100 %}
+<!-- Variables for local testing here -->
+<!-- here make data>var for weakness and vice versa -->
+{% set transcript = "I has lot's of apples because i go to an supermarket" %}
+{% set crt_text = "I have lots of apples because i go to the supermarket" %}
+
+{% set data1 = 0 %}
 {% set var1=20 %}
 {% set sm=20 %}
+{% set data2 = 10 %}
 
-{% set data2 = 100 %}
-
-{% set data6 = 100 %}
+{% set data6 = 10 %}
 {% set var3=20 %}
 
-{% set data8 = 100 %}
-{% set var4=20 %}
-
+<!-- Make goods true for strength and vice versa, kinda obvious still. -->
 {% set goodblink = True %}
 {% set noblink= False%}
-{% set moreblink = False  %}
+{% set moreblink = False %}
 {% set goodeye = True %}
 {% set badeye = False %}
 {% set videoerr = False %}
+
+<!-- voice variables -->
+{% set gram = 10 %}
+{% set crt_l = ["has", "lot's", "an"] %}
+{% set t_l = ["have", "lots", "the"] %}

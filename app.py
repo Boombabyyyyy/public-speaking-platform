@@ -39,6 +39,7 @@ global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold
 global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c
 #speech variable initialized
 global recording,file_exists,exe,var,text,listing,grammermist,pauses,articulates,duration,rate_of_speech,ready
+global matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l
 capture=0
 switch=1
 execution = 0
@@ -267,7 +268,7 @@ def myspsr(m,p):
 
 #function for speech to text
 def speechtotext():
-    global text,grammermist,pauses,articulates,duration,rate_of_speech
+    global text,grammermist,pauses,articulates,duration,rate_of_speech, matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l
     r = sr.Recognizer()
 
     file_audio = sr.AudioFile('audio.wav')
@@ -286,19 +287,22 @@ def speechtotext():
         listing=matches[grammermist]
         #print(matches[grammermist])
         grammermist+=1
-
-    matches = tool.check(text)
+        
     len(matches)
     mistakes=[tool]
     crt_text=tool.correct(text)
     text_list=text.split()
     crt_text_list=crt_text.split()
-    l=[]
+    crt_l=[]
+    t_l=[]
     for i in range(len(text_list)):
         if text_list[i]!=crt_text_list[i]:
-            l.append(crt_text_list[i])
-    print(l)
-    
+            crt_l.append(crt_text_list[i])
+    print(crt_l)
+    for i in range(len(text_list)):
+        if text_list[i]!=crt_text_list[i]:
+            t_l.append(text_list[i])
+    print(t_l)
     
     #code suggested
     p="audio" # Audio File title
@@ -455,13 +459,13 @@ def tasks1():
             var3 = angry_threshold,var4 = other_threshold ,eye = movement,transcript=text, gram = grammermist , 
             pau = pauses , arti = articulates , dur = duration , ros =rate_of_speech,
             sm = percent_smile, i = i, goodblink = goodblink, noblink = noblink, moreblink =moreblink, goodeye = goodeye,
-            c=c, badeye=badeye, videoerr=videoerr)
+            c=c, badeye=badeye, videoerr=videoerr, crt_text=crt_text, crt_l=crt_l, t_l=t_l)
     
          
 #main
 if __name__ == '__main__':
-    # context = ('/etc/nginx/ssl/lightinfosys.crt', '/etc/nginx/ssl/lightinfosys.key')
-    # app.run(host='0.0.0.0', port=5000, debug=True, ssl_context=context)
+    context = ('/etc/nginx/ssl/lightinfosys.crt', '/etc/nginx/ssl/lightinfosys.key')
+    app.run(host='0.0.0.0', port=5000, debug=True, ssl_context=context)
     app.run(debug=True)
 
 
