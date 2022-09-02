@@ -72,12 +72,7 @@ grammermist=0
 pauses = 0
 articulates = 0
 duration = 0
-rate_of_speech = 0
-ros_error = False
-ros_fast = False
-ros_perf = False
-ros_slow = False
-ros_mins = 0
+
 #end
 
 #Load pretrained face detection model    
@@ -271,14 +266,15 @@ def myspsr(m,p):
     return z3;
 #speech functions end
 
-
+rate_of_speech = 0
+ros_error = False
+ros_fast = False
+ros_perf = False
+ros_slow = False
+ros_mins = 0
 #function for speech to text
 def speechtotext():
     global text,grammermist,pauses,articulates,duration,rate_of_speech, matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l, ros_perf, ros_slow, ros_fast, ros_mins, ros_error, artigood
-    ros_perf=False
-    ros_slow=False
-    ros_fast=False
-    artigood = False
 
     r = sr.Recognizer()
 
@@ -309,11 +305,11 @@ def speechtotext():
     for i in range(len(crt_text_list)):
         if text_list[i]!=crt_text_list[i]:
             crt_l.append(crt_text_list[i])
-    print(crt_l)
+    
     for i in range(len(crt_text_list)):
         if text_list[i]!=crt_text_list[i]:
             t_l.append(text_list[i])
-    print(t_l)
+    
     
     #code suggested
     p="audio" # Audio File title
@@ -340,13 +336,23 @@ def speechtotext():
     if articulates >=4 and articulates <=5:
         artigood = True
 
-    
-        
+    print(rate_of_speech)
+    print(ros_mins)
 
     return grammermist,pauses,articulates,duration,rate_of_speech,text,ros_mins,ros_perf,ros_slow,ros_fast,ros_error
 
 
-    
+print("post" + rate_of_speech)
+print("post" + ros_mins)
+print(ros_perf)
+print(ros_slow)
+print(ros_fast)
+print(artigood)
+
+
+
+
+
 #rendering to home page             
 
 
