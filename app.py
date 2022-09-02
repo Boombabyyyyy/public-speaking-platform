@@ -342,8 +342,8 @@ def speechtotext():
     return grammermist,pauses,articulates,duration,rate_of_speech,text,ros_mins,ros_perf,ros_slow,ros_fast,ros_error
 
 
-print("post" + rate_of_speech)
-print("post" + ros_mins)
+print("post", rate_of_speech)
+print("post", ros_mins)
 print(ros_perf)
 print(ros_slow)
 print(ros_fast)
