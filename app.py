@@ -37,10 +37,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 #declaration of variables
 global capture, switch,execution ,frame_cnt,smile_count,pale_count,worried_count,anxious_count,surprise_count,angry_count,blink_cnt,other_count
 global smilenormal_threshold , worriedanxioussurprise_threshold, angry_threshold, other_threshold,a,b, percent_smile
-global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c, artigood
+global goodblink , noblink ,moreblink, i, goodeye, badeye, videoerrm, c
 #speech variable initialized
 global recording,file_exists,exe,var,text,listing,grammermist,pauses,articulates,duration,rate_of_speech,ready
-global matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l, ros_mins, ros_perf, ros_slow, ros_fast, ros_error
+global matches, mistakes, crt_text, text_list, crt_text_list, crt_l, t_l, ros_mins, ros_perf, ros_slow, ros_fast, ros_error,artigood
 capture=0
 switch=1
 execution = 0
@@ -271,6 +271,7 @@ ros_error = False
 ros_fast = False
 ros_perf = False
 ros_slow = False
+artigood = False
 ros_mins = 0
 #function for speech to text
 def speechtotext():
