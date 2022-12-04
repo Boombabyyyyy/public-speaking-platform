@@ -24,13 +24,13 @@ How to locally run the project for development:
 
 How to use the public speaking platform:
 
-Step 1. Click on Start Practicing Now.
-Step 2. Click on Turn On Camera to start the camera.
-Step 3. Click on Record to record the audio.
-Step 4. Click on Start Recording to start the video recording.
-Step 5. Click on Stop Recording to stop the video recording.
-Step 6. Click on Save Recording to save the video recording.
-Step 7. Click on Stop to stop audio recording.
-Step 8. Click on Upload next to the audio recording to upload it to the server for processing.
-Step 9. Click on Done to get to the next stage, once done with recording.
-Step 10. Once the video finishes processing click on Get Report to get a detailed report.
+- Step 1. Click on Start Practicing Now.
+- Step 2. Click on Turn On Camera to start the camera.
+- Step 3. Click on Record to record the audio.
+- Step 4. Click on Start Recording to start the video recording.
+- Step 5. Click on Stop Recording to stop the video recording.
+- Step 6. Click on Save Recording to save the video recording.
+- Step 7. Click on Stop to stop audio recording.
+- Step 8. Click on Upload next to the audio recording to upload it to the server for processing.
+- Step 9. Click on Done to get to the next stage, once done with recording.
+- Step 10. Once the video finishes processing click on Get Report to get a detailed report.
